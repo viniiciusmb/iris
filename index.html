@@ -110,7 +110,7 @@
     /* ── VIDEO SECTION ── */
     .video-section {
       background: var(--bg);
-      padding: 8px 16px 0;
+      padding: 8px 16px 40px;
     }
     .video-wrap {
       max-width: 700px;
@@ -124,71 +124,6 @@
       width: 100% !important;
       max-width: 100% !important;
     }
-
-    /* ── URGENCY BOX ── */
-    .urgency-section {
-      background: var(--bg);
-      padding: 28px 20px 0;
-    }
-    .urgency-box {
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background: var(--bg2);
-      border-radius: 8px;
-      padding: 24px 28px;
-    }
-    .urgency-icon {
-      font-size: 52px;
-      flex-shrink: 0;
-    }
-    .urgency-text {
-      font-size: clamp(16px, 3.5vw, 22px);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.35;
-    }
-
-    /* ── CTA BUTTON ── */
-    .cta-section {
-      background: var(--bg);
-      padding: 28px 20px 40px;
-      text-align: center;
-    }
-
-    @keyframes pulse-btn {
-      0%, 100% { transform: scale(1); box-shadow: 0 6px 32px rgba(232,57,42,0.5); }
-      50%       { transform: scale(1.03); box-shadow: 0 10px 48px rgba(232,57,42,0.75); }
-    }
-
-    .btn-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: linear-gradient(180deg, #ff5a47 0%, #e8392a 100%);
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(16px, 4vw, 22px);
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 20px 40px;
-      border: none;
-      border-radius: 100px;
-      cursor: pointer;
-      text-decoration: none;
-      animation: pulse-btn 2.2s ease-in-out infinite;
-      max-width: 560px;
-      width: 100%;
-    }
-    .btn-cta:hover {
-      animation: none;
-      background: linear-gradient(180deg, #ff6b5a 0%, #f04030 100%);
-    }
-    .btn-cursor { font-size: 20px; }
 
     /* ── FOOTER ── */
     footer {
@@ -237,25 +172,6 @@
         s.async=!0,document.head.appendChild(s);
       </script>
     </div>
-  </div>
-
-  <!-- URGENCY -->
-  <div class="urgency-section">
-    <div class="urgency-box">
-      <div class="urgency-icon">🛑</div>
-      <p class="urgency-text">
-        Este vídeo ficará fora do ar em breve.<br/>
-        Essa é sua última chance de assistir até o final.
-      </p>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta-section">
-    <a href="#" class="btn-cta">
-      CONTINUAR ASSISTINDO
-      <span class="btn-cursor">👆</span>
-    </a>
   </div>
 
   <!-- FOOTER -->
