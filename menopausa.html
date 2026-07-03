@@ -258,27 +258,82 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
 .sticky-cta a{background:var(--gold);color:var(--navy);font-weight:700;font-size:13px;padding:10px 22px;border-radius:3px;text-decoration:none;white-space:nowrap}
 @media(max-width:480px){.sticky-cta{flex-direction:column;gap:6px;text-align:center;padding:10px 16px}}
 @media(max-width:480px){.sticky-cta span{font-size:11px}}
+
+/* SELOS AUTORIDADE */
+.auth-selos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px;padding-top:28px;border-top:1px solid rgba(201,169,110,0.2)}
+.auth-selo{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.22);border-radius:4px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,0.75);font-weight:500}
+.auth-selo-dot{width:6px;height:6px;min-width:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* QUIZ VISUAL */
+.quiz-section{background:var(--navy)}
+.quiz-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:32px;max-width:640px;margin-left:auto;margin-right:auto}
+@media(min-width:480px){.quiz-grid{grid-template-columns:1fr 1fr}}
+.quiz-item{background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.18);border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:background 0.2s,border-color 0.2s;user-select:none}
+.quiz-item.checked{background:rgba(201,169,110,0.12);border-color:var(--gold)}
+.quiz-check{width:20px;height:20px;min-width:20px;border-radius:4px;border:2px solid rgba(201,169,110,0.4);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);transition:background 0.2s,border-color 0.2s;flex-shrink:0}
+.quiz-item.checked .quiz-check{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.quiz-item span{font-size:14px;color:rgba(255,255,255,0.8);line-height:1.4}
+.quiz-resultado{margin-top:24px;padding:16px 20px;border-radius:8px;text-align:center;font-size:14px;line-height:1.65;display:none;font-weight:500}
+.quiz-resultado.show{display:block}
+.quiz-resultado.alert{background:#7F1D1D;color:#FEE2E2;border:1px solid #B91C1C}
+.quiz-resultado.ok{background:rgba(201,169,110,0.1);color:var(--gold2);border:1px solid rgba(201,169,110,0.25)}
+
+/* IDENTIFICAÇÃO CARDS */
+.ident-section{background:#fff}
+.ident-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:36px}
+@media(min-width:500px){.ident-grid{grid-template-columns:1fr 1fr}}
+.ident-card{background:var(--cream2);border:1px solid #E5DDD4;border-radius:8px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px}
+.ident-icon{width:28px;height:28px;min-width:28px;border-radius:50%;background:#FEE2E2;color:var(--red);font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.ident-txt{font-size:14px;color:#374151;line-height:1.55}
+.ident-txt strong{display:block;font-weight:600;color:#111827;margin-bottom:2px;font-size:14px}
+
+/* MÉTODO */
+.metodo-section{background:var(--cream)}
+.metodo-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:36px}
+@media(min-width:480px){.metodo-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:700px){.metodo-grid{grid-template-columns:repeat(3,1fr)}}
+.metodo-card{background:#fff;border-radius:8px;padding:20px 18px;border:1px solid #E5DDD4;text-align:center}
+.metodo-icon{font-size:28px;margin-bottom:10px;display:block}
+.metodo-card h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.metodo-card p{font-size:13px;color:#6B7280;line-height:1.55}
+.metodo-tm{display:inline-block;background:var(--navy);color:var(--gold);font-size:10px;font-weight:700;letter-spacing:0.1em;padding:3px 10px;border-radius:2px;margin-bottom:16px;text-transform:uppercase}
+
+/* COMPARAÇÃO VALOR */
+.valor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px auto;max-width:440px}
+.valor-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 8px;text-align:center;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5}
+.valor-item strong{display:block;color:rgba(255,255,255,0.7);font-size:13px;margin-bottom:3px}
+
+/* URGÊNCIA ELEGANTE */
+.urgencia-elegante{background:rgba(201,169,110,0.07);border:1px solid rgba(201,169,110,0.2);border-radius:6px;padding:12px 16px;text-align:center;max-width:460px;margin:0 auto 20px;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.5}
+.urgencia-elegante strong{color:var(--gold2);display:block;margin-bottom:3px}
+
 </style>
 </head>
 <body>
-
 <!-- TOPBAR -->
-<div class="topbar">Dra. Iris Bazilio · Doutora em Saúde da Mulher · INCA e UFRJ · 28 anos de prática clínica</div>
+<div class="topbar">Dra. Iris Bazilio · Doutora em Saúde da Mulher · INCA · UFRJ · 28 anos de prática clínica</div>
 
 <!-- HERO -->
 <section class="hero">
-  <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.18" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <style>.np{fill:#C9A96E}.na{fill:none;stroke:#C9A96E;stroke-width:0.8}@keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}@keyframes dash{to{stroke-dashoffset:-40}}.p1{animation:pulse 3.2s ease-in-out infinite}.p2{animation:pulse 4.1s ease-in-out 0.8s infinite}.p3{animation:pulse 2.8s ease-in-out 1.4s infinite}.p4{animation:pulse 3.7s ease-in-out 0.3s infinite}.p5{animation:pulse 4.5s ease-in-out 1.1s infinite}.ax{stroke-dasharray:8 4;animation:dash 2s linear infinite}@media(prefers-reduced-motion:reduce){.p1,.p2,.p3,.p4,.p5,.ax{animation:none}}</style>
-    </defs>
-    <line class="na ax" x1="180" y1="120" x2="420" y2="200"/><line class="na ax" x1="420" y1="200" x2="680" y2="140"/><line class="na ax" x1="680" y1="140" x2="920" y2="260"/><line class="na ax" x1="920" y1="260" x2="1150" y2="180"/><line class="na ax" x1="1150" y1="180" x2="1320" y2="300"/><line class="na ax" x1="420" y1="200" x2="520" y2="420"/><line class="na ax" x1="680" y1="140" x2="740" y2="380"/><line class="na ax" x1="920" y1="260" x2="860" y2="500"/><line class="na ax" x1="1150" y1="180" x2="1100" y2="430"/><line class="na ax" x1="520" y1="420" x2="740" y2="380"/><line class="na ax" x1="740" y1="380" x2="860" y2="500"/><line class="na ax" x1="860" y1="500" x2="1100" y2="430"/><line class="na ax" x1="1100" y1="430" x2="1350" y2="560"/>
-    <circle class="np p1" cx="180" cy="120" r="5"/><circle class="np p2" cx="420" cy="200" r="7"/><circle class="np p3" cx="680" cy="140" r="5.5"/><circle class="np p1" cx="920" cy="260" r="7"/><circle class="np p4" cx="1150" cy="180" r="5"/><circle class="np p2" cx="520" cy="420" r="6"/><circle class="np p3" cx="740" cy="380" r="5"/><circle class="np p1" cx="860" cy="500" r="7"/><circle class="np p4" cx="1100" cy="430" r="5.5"/>
-    <circle class="na p2" cx="420" cy="200" r="14" opacity="0.3"/><circle class="na p1" cx="920" cy="260" r="14" opacity="0.3"/><circle class="na p3" cx="860" cy="500" r="14" opacity="0.3"/>
+  <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.15" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs><style>.np{fill:#C9A96E}.na{fill:none;stroke:#C9A96E;stroke-width:0.8}@keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}@keyframes dash{to{stroke-dashoffset:-40}}.p1{animation:pulse 3.2s ease-in-out infinite}.p2{animation:pulse 4.1s ease-in-out 0.8s infinite}.p3{animation:pulse 2.8s ease-in-out 1.4s infinite}.ax{stroke-dasharray:8 4;animation:dash 2s linear infinite}@media(prefers-reduced-motion:reduce){.p1,.p2,.p3,.ax{animation:none}}</style></defs>
+    <line class="na ax" x1="180" y1="120" x2="420" y2="200"/><line class="na ax" x1="420" y1="200" x2="680" y2="140"/><line class="na ax" x1="680" y1="140" x2="920" y2="260"/><line class="na ax" x1="920" y1="260" x2="1150" y2="180"/><line class="na ax" x1="420" y1="200" x2="520" y2="420"/><line class="na ax" x1="740" y1="380" x2="860" y2="500"/><line class="na ax" x1="860" y1="500" x2="1100" y2="430"/>
+    <circle class="np p1" cx="180" cy="120" r="5"/><circle class="np p2" cx="420" cy="200" r="7"/><circle class="np p3" cx="680" cy="140" r="5.5"/><circle class="np p1" cx="920" cy="260" r="7"/><circle class="np p2" cx="520" cy="420" r="6"/><circle class="np p1" cx="860" cy="500" r="7"/>
+    <circle class="na p2" cx="420" cy="200" r="14" opacity="0.3"/><circle class="na p1" cx="920" cy="260" r="14" opacity="0.3"/>
   </svg>
 
   <span class="hero-eyebrow" style="position:relative">Instituto Iris Bazilio</span>
   <h1 style="position:relative">A menopausa não avisa.<br>Ela só vai <em>tomando tudo</em> —<br>o seu sono, o seu corpo, o seu casamento.</h1>
-  <p class="hero-sub" style="margin-top:24px;position:relative">Em 14 dias aplicando o Protocolo Cérebro & Menopausa, seu corpo começa a responder. Sem suplementos caros. Sem remédios que mascaram. Com ciência real.</p>
+  <p class="hero-sub" style="margin-top:20px;position:relative">Muitas mulheres relatam melhora nas primeiras semanas aplicando o Método NeuroEquilíbrio Feminino™. Sem suplementos. Sem dietas malucas. Com ciência real.</p>
+
+  <!-- SELOS AUTORIDADE -->
+  <div class="auth-selos" style="position:relative">
+    <div class="auth-selo"><div class="auth-selo-dot"></div>Doutora em Saúde da Mulher</div>
+    <div class="auth-selo"><div class="auth-selo-dot"></div>28 anos de prática clínica</div>
+    <div class="auth-selo"><div class="auth-selo-dot"></div>Pesquisadora INCA</div>
+    <div class="auth-selo"><div class="auth-selo-dot"></div>Docente UFRJ</div>
+    <div class="auth-selo"><div class="auth-selo-dot"></div>Especialista em Neurociências</div>
+  </div>
 
   <div class="hero-img-wrap" style="position:relative">
     <img src="imagemheadlinemenopausa.png" alt="Dra. Iris Bazilio — Protocolo Cérebro e Menopausa">
@@ -286,63 +341,51 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
   </div>
 </section>
 
-<!-- DOR -->
-<section class="dor-section">
+<!-- IDENTIFICAÇÃO -->
+<section class="ident-section">
   <div class="container">
-    <div class="dor-intro reveal">
-      <span class="eyebrow">Isso está acontecendo com você?</span>
-      <h2>A menopausa não é um sintoma.<br>São <em>cinco perdas ao mesmo tempo.</em></h2>
-      <p>E nenhum médico vai juntar todos esses pontos numa consulta de 15 minutos.</p>
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 8px">
+      <span class="eyebrow">Você se reconhece aqui?</span>
+      <h2>Você ainda é a mesma mulher.<br>Mas a menopausa mudou <em>tudo ao redor.</em></h2>
     </div>
-
-    <div class="dor-blocos reveal">
-      <div class="dor-bloco">
-        <div class="dor-x">1</div>
-        <div class="dor-bloco-txt">
-          <strong>O corpo que você não reconhece mais</strong>
-          Engordou 6, 8, 10kg sem comer diferente. A barriga apareceu. A calça não fecha. Você faz dieta, corta carboidrato, vai à academia — e a balança não move. Não é falta de força de vontade. É hormônio.
-        </div>
-      </div>
-      <div class="dor-bloco">
-        <div class="dor-x">2</div>
-        <div class="dor-bloco-txt">
-          <strong>O casamento esfriando em silêncio</strong>
-          A libido foi embora. A relação dói ou simplesmente não acontece mais. Seu parceiro para de tentar. Você sente culpa mas não tem vontade. O casal dorme no mesmo quarto como dois estranhos — e ninguém fala sobre isso.
-        </div>
-      </div>
-      <div class="dor-bloco">
-        <div class="dor-x">3</div>
-        <div class="dor-bloco-txt">
-          <strong>As noites que destroem os seus dias</strong>
-          Acorda às 3h encharcada. Troca o pijama no escuro. Fica duas horas olhando pro teto. De manhã está destruída, irritada, sem paciência. E assim todos os dias — porque uma noite ruim puxa a outra.
-        </div>
-      </div>
-      <div class="dor-bloco">
-        <div class="dor-x">4</div>
-        <div class="dor-bloco-txt">
-          <strong>O humor que afasta quem você ama</strong>
-          Irrita com qualquer coisa. Chora por nada. Briga com o marido, com os filhos, com colegas — e depois se sente uma pessoa horrível. Não é seu temperamento. É o seu cérebro sem estrogênio.
-        </div>
-      </div>
-      <div class="dor-bloco">
-        <div class="dor-x">5</div>
-        <div class="dor-bloco-txt">
-          <strong>A sensação de ter ficado invisível</strong>
-          Você sente que sumiu. Que a sociedade só enxerga mulheres jovens. Que seu melhor tempo passou. Que você precisa aceitar que "agora é assim". Não precisa. Isso é mentira que colocaram na sua cabeça.
-        </div>
-      </div>
-      <div class="dor-bloco">
-        <div class="dor-x">✕</div>
-        <div class="dor-bloco-txt">
-          <strong>E você já tentou de tudo</strong>
-          Magnésio, colágeno, isoflavona, ômega-3, melatonina, chá de soja, dieta anti-inflamatória... Gastou R$ 200, R$ 300 por mês em suplemento que prometia resolver — e continuou acordando às 3h, engordando e sem vontade de nada.
-        </div>
-      </div>
+    <div class="ident-grid reveal">
+      <div class="ident-card"><div class="ident-icon">😴</div><div class="ident-txt"><strong>Acorda cansada mesmo após dormir</strong>Insônia, suor noturno, acordar várias vezes — e o dia começa destruído.</div></div>
+      <div class="ident-card"><div class="ident-icon">🌡️</div><div class="ident-txt"><strong>Ondas de calor inesperadas</strong>Na reunião, no jantar, na cama. Sem aviso. Sem controle.</div></div>
+      <div class="ident-card"><div class="ident-icon">😤</div><div class="ident-txt"><strong>Irritação sem motivo aparente</strong>Briga com quem ama. Se culpa. Não reconhece mais o próprio humor.</div></div>
+      <div class="ident-card"><div class="ident-icon">💔</div><div class="ident-txt"><strong>Perdeu o interesse sexual</strong>O desejo foi embora. O distanciamento cresce. Ninguém fala sobre isso.</div></div>
+      <div class="ident-card"><div class="ident-icon">⚖️</div><div class="ident-txt"><strong>Ganhando peso sem explicação</strong>Comeu bem, se exercitou — e a balança subiu assim mesmo.</div></div>
+      <div class="ident-card"><div class="ident-icon">🪞</div><div class="ident-txt"><strong>Não se reconhece mais</strong>Sente que sumiu. Que seu melhor tempo passou. Que precisa "aceitar".</div></div>
     </div>
-
     <div class="dor-corte reveal">
-      <p>"Suplemento não resolve menopausa. Ele tampona. A raiz é hormonal e cerebral — e quando você age na raiz, tudo muda ao mesmo tempo."</p>
+      <p>"Esses seis pontos não são coincidência. Têm a mesma causa — e a mesma solução."</p>
       <span>— Dra. Iris Bazilio · Doutora em Saúde da Mulher</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ DIAGNÓSTICO -->
+<section class="quiz-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:620px;margin:0 auto">
+      <span class="eyebrow" style="color:var(--gold)">Diagnóstico rápido</span>
+      <h2 style="color:#fff">Seu cérebro está sofrendo os impactos da menopausa?</h2>
+      <p style="color:rgba(255,255,255,0.6);font-size:15px;margin-top:12px">Marque os itens que você vivencia com frequência:</p>
+    </div>
+    <div class="quiz-grid reveal">
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Dificuldade para dormir ou manter o sono</span></div>
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Ondas de calor ou suor noturno</span></div>
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Ansiedade ou irritação frequente</span></div>
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Mudanças de humor sem motivo claro</span></div>
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Baixa libido ou falta de interesse sexual</span></div>
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Ganho de peso especialmente na barriga</span></div>
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Cansaço persistente mesmo descansando</span></div>
+      <div class="quiz-item" onclick="toggleQuiz(this)"><div class="quiz-check">✓</div><span>Esquecimentos ou dificuldade de concentração</span></div>
+    </div>
+    <div class="quiz-resultado alert reveal" id="quiz-alerta" style="display:none">
+      ⚠️ <strong>Se você marcou 3 ou mais itens</strong>, seu cérebro pode estar sofrendo os efeitos da queda hormonal — e esses sintomas tendem a se intensificar com o tempo sem a abordagem correta.
+    </div>
+    <div class="quiz-resultado ok reveal" id="quiz-ok" style="display:none">
+      Você marcou poucos itens. Mesmo assim, conhecer o Método NeuroEquilíbrio Feminino™ pode ajudar a prevenir o que ainda está por vir.
     </div>
   </div>
 </section>
@@ -353,129 +396,60 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
     <div class="agit-intro reveal">
       <span class="eyebrow">O que ninguém te contou</span>
       <h2>Você não está <em>exagerando.</em><br>O sistema é que falhou com você.</h2>
-      <p>O médico olha um hormônio, diz que está "dentro da faixa" e te manda embora com ansiolítico. A internet te vende suplemento. A farmácia te vende calmante. Ninguém olha para o quadro completo.</p>
+      <p>O médico mede um hormônio, diz "está dentro da faixa" e te manda embora com ansiolítico. A farmácia te vende suplemento. Ninguém olha para o quadro completo.</p>
     </div>
     <div class="agit-lista">
-      <div class="agit-item reveal">
-        <strong>Magnésio não devolve seu sono se o estrogênio ainda está em colapso.</strong>
-        Melatonina tampona por uma noite. No dia seguinte, o ciclo reinicia. Você compra mais uma caixa. Gasta mais R$ 80. E o problema continua.
-      </div>
-      <div class="agit-item reveal">
-        <strong>Isoflavona não resolve libido zerada causada por alteração hormonal cerebral.</strong>
-        O desejo feminino começa no cérebro — não nos ovários. Sem entender isso, qualquer suplemento é chute no escuro.
-      </div>
-      <div class="agit-item reveal">
-        <strong>Dieta não emagrece quando o cortisol e a insulina estão desregulados pela queda hormonal.</strong>
-        Você não está fraca. Seu metabolismo está respondendo a uma mudança química real. Isso tem solução — mas não é cortar carboidrato.
-      </div>
-      <div class="agit-item reveal">
-        <strong>Cada mês sem agir na raiz é mais difícil de reverter.</strong>
-        O corpo feminino tem neuroplasticidade — ele muda, ele se adapta, ele se recupera. Mas o tempo importa. Quanto antes você age, mais rápido e mais fácil é o caminho de volta.
-      </div>
+      <div class="agit-item reveal"><strong>Magnésio não devolve o sono se o estrogênio está em colapso.</strong>Melatonina tapa por uma noite. No dia seguinte, o ciclo recomeça.</div>
+      <div class="agit-item reveal"><strong>Isoflavona não resolve libido zerada causada por alteração cerebral.</strong>O desejo feminino começa no cérebro — não nos ovários. Sem entender isso, qualquer suplemento é chute no escuro.</div>
+      <div class="agit-item reveal"><strong>Dieta não emagrece quando cortisol e insulina estão desregulados.</strong>Você não está fraca. Seu metabolismo respondendo a uma mudança química real. Isso tem solução — mas não é cortar carboidrato.</div>
     </div>
   </div>
 </section>
 
-<!-- SOLUÇÃO -->
+<!-- MÉTODO -->
+<section class="metodo-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+      <span class="eyebrow">A abordagem exclusiva</span>
+      <div class="metodo-tm">Método Proprietário</div>
+      <h2>Método <em>NeuroEquilíbrio Feminino™</em></h2>
+      <p style="font-size:16px;color:#374151;line-height:1.8;margin-top:12px">Desenvolvido pela Dra. Iris Bazilio com base em neurociência e 28 anos de prática clínica. Age sobre os 5 impactos da menopausa ao mesmo tempo — atacando a raiz hormonal e cerebral, não os sintomas isolados.</p>
+    </div>
+    <div class="metodo-grid reveal">
+      <div class="metodo-card"><span class="metodo-icon">😴</span><h4>Sono</h4><p>Estratégias baseadas na relação estrogênio-hipotálamo para dormir a noite toda.</p></div>
+      <div class="metodo-card"><span class="metodo-icon">😌</span><h4>Humor</h4><p>Como estabilizar emoções quando os hormônios estão em transição — sem ansiolítico.</p></div>
+      <div class="metodo-card"><span class="metodo-icon">⚡</span><h4>Energia</h4><p>Recuperar vitalidade atuando no cortisol e no metabolismo hormonal.</p></div>
+      <div class="metodo-card"><span class="metodo-icon">🔥</span><h4>Libido</h4><p>O desejo começa no cérebro. Como reativar com base científica e sem tabu.</p></div>
+      <div class="metodo-card"><span class="metodo-icon">⚖️</span><h4>Peso</h4><p>Emagrecer na menopausa sem dieta maluca — agindo na causa hormonal real.</p></div>
+      <div class="metodo-card"><span class="metodo-icon">🧠</span><h4>Cérebro</h4><p>Neuroplasticidade aplicada: memória, foco e clareza mental durante a transição.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTO -->
 <section class="solucao-section">
   <div class="container">
     <div class="solucao-intro reveal">
-      <div class="solucao-tag">A única solução completa</div>
-      <h2>O <em>Protocolo Cérebro & Menopausa</em><br>ataca os 5 pontos ao mesmo tempo.</h2>
-      <p>Não é mais um suplemento. Não é dieta maluca. É o método baseado em neurociência que trata a raiz hormonal e cerebral — e entrega resultados que você vai sentir em 14 dias.</p>
-
-      <!-- DESTAQUE DA PROMESSA -->
-      <div style="background:var(--navy);border-radius:8px;padding:22px 24px;margin-top:28px;border:1px solid rgba(201,169,110,0.35)">
-        <p style="font-family:'Playfair Display',serif;font-size:clamp(17px,3vw,22px);color:#fff;line-height:1.65;margin:0">
-          Recupere sua vida de antes da menopausa —<br>
-          <em style="color:var(--gold)">sem gastar 1 real com suplemento<br>e sem fazer dietas malucas.</em>
-        </p>
-      </div>
+      <div class="solucao-tag">O que está incluso</div>
+      <h2>Protocolo Cérebro & Menopausa —<br>o método completo em <em>formato digital</em></h2>
+      <p>Acesso imediato. Sem suplemento. Sem dieta radical. 100% natural.</p>
     </div>
-
     <div class="solucao-inner">
       <div class="produto-visual reveal">
         <div class="produto-subtitulo">Método digital completo</div>
         <div class="produto-nome">Protocolo<br>Cérebro & Menopausa</div>
-        <img src="capaprodutomenopausa.png" alt="Protocolo Cérebro &amp; Menopausa — Dra. Iris Bazilio" style="width:100%;border-radius:6px;display:block;margin:16px 0">
+        <img src="capaprodutomenopausa.png" alt="Protocolo Cérebro e Menopausa" style="width:100%;border-radius:6px;display:block;margin:16px 0">
         <div class="produto-badge">Acesso imediato</div>
       </div>
-
       <div class="modulos reveal">
-        <div class="modulo">
-          <div class="modulo-num">1</div>
-          <div class="modulo-txt">
-            <strong>Emagreça sem dieta — entenda a gordura hormonal</strong>
-            <span>A barriga da menopausa não é falta de força de vontade. É cortisol e estrogênio desregulados. O Protocolo mostra como reverter isso sem cortar comida e sem academia obsessiva.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">2</div>
-          <div class="modulo-txt">
-            <strong>Protocolo de sono: dormir a noite toda de novo</strong>
-            <span>A relação exata entre queda hormonal, hipotálamo e insônia. Com rotina prática para aplicar hoje à noite.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">3</div>
-          <div class="modulo-txt">
-            <strong>Humor, irritação e choro sob controle</strong>
-            <span>Como o cérebro sem estrogênio reage — e as estratégias para estabilizar emoções sem ansiolítico.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">4</div>
-          <div class="modulo-txt">
-            <strong>Libido de volta: o que ninguém fala</strong>
-            <span>O desejo começa no cérebro. Entenda por que sumiu e como reativar — com base científica, sem tabu.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">5</div>
-          <div class="modulo-txt">
-            <strong>Alimentação que trabalha pelos seus hormônios</strong>
-            <span>O que comer para reduzir fogachos, perder a barriga e proteger seu cérebro. Sem dieta radical.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">6</div>
-          <div class="modulo-txt">
-            <strong>Sua nova identidade — não invisível, renascida</strong>
-            <span>A menopausa pode ser o começo da fase mais poderosa da sua vida. Este módulo mostra como.</span>
-          </div>
-        </div>
+        <div class="modulo"><div class="modulo-num">1</div><div class="modulo-txt"><strong>Emagreça sem dieta — a gordura hormonal</strong><span>Por que você ganhou peso e como reverter sem cortar comida e sem academia obsessiva.</span></div></div>
+        <div class="modulo"><div class="modulo-num">2</div><div class="modulo-txt"><strong>Protocolo de sono</strong><span>Rotina prática baseada na relação estrogênio-hipotálamo. Para aplicar hoje à noite.</span></div></div>
+        <div class="modulo"><div class="modulo-num">3</div><div class="modulo-txt"><strong>Humor e emoções sob controle</strong><span>Estratégias para estabilizar sem depender de ansiolítico.</span></div></div>
+        <div class="modulo"><div class="modulo-num">4</div><div class="modulo-txt"><strong>Libido de volta</strong><span>O que bloqueou o desejo — e como reativar com ciência e sem tabu.</span></div></div>
+        <div class="modulo"><div class="modulo-num">5</div><div class="modulo-txt"><strong>Alimentação hormonal</strong><span>O que comer para reduzir fogachos e proteger o cérebro. Sem radicalismo.</span></div></div>
+        <div class="modulo"><div class="modulo-num">6</div><div class="modulo-txt"><strong>Sua nova fase — não invisível, renascida</strong><span>A menopausa como começo da sua fase mais poderosa.</span></div></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- 14 DIAS -->
-<section style="background:var(--navy);padding:64px 16px">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:40px">
-      <span class="eyebrow">O que acontece no seu corpo</span>
-      <h2 style="color:#fff">Em <em>14 dias</em> seu corpo já responde.</h2>
-      <p style="color:rgba(255,255,255,0.65);font-size:16px;max-width:580px;margin:12px auto 0;line-height:1.8">Não é promessa vaga. É o que acontece quando você age na raiz hormonal e cerebral — e não só tampa sintoma.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr;gap:14px;max-width:680px;margin:0 auto" class="reveal">
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:8px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start">
-        <span style="font-size:22px;flex-shrink:0">😴</span>
-        <div><strong style="color:#fff;display:block;margin-bottom:3px">Dias 1–5: o sono começa a melhorar</strong><span style="font-size:13px;color:rgba(255,255,255,0.6)">Você começa a acordar menos vezes. A qualidade do sono aumenta. De manhã já sente a diferença.</span></div>
-      </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:8px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start">
-        <span style="font-size:22px;flex-shrink:0">😌</span>
-        <div><strong style="color:#fff;display:block;margin-bottom:3px">Dias 5–10: o humor estabiliza</strong><span style="font-size:13px;color:rgba(255,255,255,0.6)">A irritação diminui. Os choros sem motivo ficam mais raros. Você começa a se reconhecer de novo.</span></div>
-      </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:8px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start">
-        <span style="font-size:22px;flex-shrink:0">⚖️</span>
-        <div><strong style="color:#fff;display:block;margin-bottom:3px">Dias 10–14: o corpo começa a ceder</strong><span style="font-size:13px;color:rgba(255,255,255,0.6)">O inchaço reduz. A balança começa a se mover. A barriga hormonal responde quando você age na causa.</span></div>
-      </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(201,169,110,0.2);border-radius:8px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start">
-        <span style="font-size:22px;flex-shrink:0">🔥</span>
-        <div><strong style="color:#fff;display:block;margin-bottom:3px">Além de 14 dias: a libido volta à cena</strong><span style="font-size:13px;color:rgba(255,255,255,0.6)">Com sono, humor e metabolismo regulados, o desejo reaparece. O que parecia morto estava apenas bloqueado.</span></div>
-      </div>
-    </div>
-    <p class="reveal" style="text-align:center;margin-top:28px;font-size:13px;color:rgba(255,255,255,0.35)">Resultados variam conforme o organismo. A maioria das mulheres relata melhora perceptível nas duas primeiras semanas de aplicação consistente.</p>
   </div>
 </section>
 
@@ -494,9 +468,8 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
       <div style="background:#FEF2F2;border-radius:6px;padding:14px 16px;font-size:13px;color:#7F1D1D;display:flex;align-items:center;gap:8px"><span>✕</span> Melatonina — voltou a acordar</div>
       <div style="background:#FEF2F2;border-radius:6px;padding:14px 16px;font-size:13px;color:#7F1D1D;display:flex;align-items:center;gap:8px"><span>✕</span> Chá de soja — sem resultado</div>
     </div>
-
     <div class="dor-corte reveal" style="margin-top:0">
-      <p>Suplemento trata sintoma. O Protocolo Cérebro & Menopausa trata a <strong style="color:var(--gold2)">causa</strong> — a queda hormonal que desequilibra seu cérebro, seu metabolismo, seu sono e seu desejo ao mesmo tempo. É a única abordagem que resolve os 5 pontos juntos. Não tem suplemento no mercado que faça isso.</p>
+      <p>Suplemento trata sintoma. O Método NeuroEquilíbrio Feminino™ trata a <strong style="color:var(--gold2)">causa</strong> — a queda hormonal que desequilibra seu cérebro, seu metabolismo, seu sono e seu desejo ao mesmo tempo.</p>
       <span>— Dra. Iris Bazilio · Doutora em Saúde da Mulher</span>
     </div>
   </div>
@@ -505,18 +478,13 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
 <!-- BIO -->
 <section class="bio-section">
   <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="eyebrow">Quem criou este protocolo</span>
-      <h2>Dra. Iris Bazilio</h2>
-    </div>
+    <div class="reveal" style="text-align:center"><span class="eyebrow">Quem criou este método</span><h2>Dra. Iris Bazilio</h2></div>
     <div class="bio-inner">
-      <div class="bio-foto reveal">
-        <img src="imagem_iris.jpg" alt="Dra. Iris Bazilio" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:6px;display:block">
-      </div>
+      <div class="bio-foto reveal"><img src="imagem_iris.jpg" alt="Dra. Iris Bazilio" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:6px;display:block"></div>
       <div class="bio-texto reveal">
         <p><strong style="color:var(--gold2)">Iris Bazilio Ribeiro</strong> é Enfermeira há 28 anos, Doutora e Mestre em Saúde da Mulher e Oncologia. Servidora Pública Federal do INCA e da UFRJ, especialista em Neurociências e Sexualidade.</p>
-        <p>Passou pela menopausa. Sentiu cada um dos 5 pontos na pele. Engordou, não dormiu, brigou, se afastou, se perdeu. E em vez de aceitar, pesquisou durante anos e criou o método que gostaria de ter tido quando mais precisava.</p>
-        <p>Criou o <strong style="color:var(--gold2)">Ambulatório de Sexualidade</strong> para mulheres com câncer de mama no INCA — iniciativa pioneira de reabilitação hormonal e sexual com base em neurociência. Sabe o que está falando. E sabe o que funciona.</p>
+        <p>Passou pela menopausa. Sentiu cada um dos 5 pontos na pele. E em vez de aceitar, pesquisou — e criou o método que gostaria de ter tido quando mais precisava.</p>
+        <p>Fundadora do <strong style="color:var(--gold2)">Ambulatório de Sexualidade</strong> para mulheres com câncer de mama no INCA — iniciativa pioneira de reabilitação hormonal com base em neurociência.</p>
         <div class="bio-creds">
           <div class="cred">Doutora em Saúde da Mulher</div>
           <div class="cred">Neurociências · PUC</div>
@@ -534,65 +502,74 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
 <section class="depo-section">
   <div class="container-wide">
     <div class="depo-intro reveal">
-      <span class="eyebrow">Resultados reais</span>
-      <h2>Mulheres que pararam de<br><em>gastar com suplemento</em> e passaram a viver.</h2>
+      <span class="eyebrow">O que outras mulheres estão dizendo</span>
+      <h2>Mulheres que pararam de gastar com suplemento<br>e <em>passaram a viver.</em></h2>
     </div>
     <div class="depo-grid">
       <div class="depo-card reveal">
-        <div class="depo-txt">"Gastei mais de R$ 400 por mês durante um ano em suplementos. Nada funcionou. Em duas semanas com o Protocolo dormi a noite toda pela primeira vez. Meu marido não acreditou."</div>
+        <div class="depo-txt">"Gastei mais de R$ 400 por mês durante um ano em suplementos. Nada funcionou. Comecei a aplicar o método e nas primeiras semanas já percebi diferença no sono. Meu marido não acreditou."</div>
         <div class="depo-autor">[ Inserir depoimento real ]</div>
         <div class="depo-stars">★★★★★</div>
       </div>
-      <div class="depo-slot reveal">[ Inserir print de depoimento — WhatsApp ou Instagram ]</div>
-      <div class="depo-slot reveal">[ Inserir print de depoimento — WhatsApp ou Instagram ]</div>
+      <div class="depo-slot reveal" style="padding:0;overflow:hidden;min-height:unset">
+        <img src="depoimentos1.png" alt="Depoimento WhatsApp — Patrícia" style="width:100%;display:block;border-radius:8px">
+      </div>
+      <div class="depo-slot reveal" style="padding:0;overflow:hidden;min-height:unset">
+        <img src="depoimentos2.png" alt="Depoimento WhatsApp — Mariana" style="width:100%;display:block;border-radius:8px">
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
 <section class="cta-section" id="comprar">
-  <h2>Chega de gastar R$ 300 por mês<br>em suplemento que <em>não resolve.</em></h2>
-  <p class="cta-sub">Uma única vez. R$ 47,90. Os 5 pontos da menopausa atacados ao mesmo tempo. Resultados em 14 dias.</p>
+  <h2>Chega de gastar com suplemento<br>que <em>não resolve a raiz.</em></h2>
+  <p class="cta-sub">Os 5 impactos da menopausa — atacados ao mesmo tempo. De forma natural. Com ciência.</p>
 
-  <div class="escassez-bar">
-    <strong>⚠ Oferta de lançamento — válida somente hoje, <span id="data-hoje"></span></strong>
-    Este preço especial expira à meia-noite. Após o encerramento, o valor volta para R$ 97,00.
-  </div>
-
-  <div class="timer-wrap">
-    <div class="timer-bloco"><span class="timer-num" id="t-h">00</span><span class="timer-label">horas</span></div>
-    <div class="timer-sep">:</div>
-    <div class="timer-bloco"><span class="timer-num" id="t-m">29</span><span class="timer-label">min</span></div>
-    <div class="timer-sep">:</div>
-    <div class="timer-bloco"><span class="timer-num" id="t-s">59</span><span class="timer-label">seg</span></div>
+  <!-- URGÊNCIA ELEGANTE -->
+  <div class="urgencia-elegante">
+    <strong>Condição promocional de lançamento</strong>
+    Disponível por tempo limitado neste valor especial.
   </div>
 
   <div class="cta-box">
     <div class="cta-nome-prod">Protocolo Cérebro & Menopausa</div>
-    <div class="cta-sub-prod">Dra. Iris Bazilio · Acesso imediato</div>
+    <div class="cta-sub-prod">Método NeuroEquilíbrio Feminino™ · Dra. Iris Bazilio</div>
+
     <div class="preco-de-bloco">
       <span class="preco-de-valor">R$ 97,00</span>
       <span class="preco-de-badge">51% OFF</span>
     </div>
     <div class="cta-por">R$ 47,90</div>
     <div class="cta-parc">ou 2× de R$ 24,95 no cartão</div>
+
+    <!-- COMPARAÇÃO DE VALOR -->
+    <div class="valor-grid">
+      <div class="valor-item"><strong>Consulta</strong>particular</div>
+      <div class="valor-item"><strong>Jantar</strong>fora</div>
+      <div class="valor-item"><strong>1 mês</strong>de suplemento</div>
+    </div>
+    <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:18px">Tudo isso custa mais que o Método completo.</p>
+
     <ul class="cta-beneficios">
       <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Emagrecimento hormonal — sem dieta radical</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Sono reparador de volta em dias</li>
+      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Sono reparador — protocolo para aplicar hoje</li>
       <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Humor estável, sem explosões e sem culpa</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Libido e desejo reativos com base científica</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Chega de gastar R$ 300/mês em suplemento</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Acesso imediato · Vitalício · Formato digital</li>
+      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Libido reativada com base científica</li>
+      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Método 100% natural — sem suplemento</li>
+      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Acesso imediato · Vitalício · Digital</li>
     </ul>
+
     <div class="cta-bonus">
       <div class="cta-bonus-icon">🎁</div>
       <div class="cta-bonus-txt">
         <strong>Bônus: Guia de Sono Reparador</strong>
-        <span>Checklist prático para dormir a noite toda — baseado na relação estrogênio e melatonina</span>
-        <span class="cta-bonus-valor">Valor: R$ 27,00 — grátis hoje</span>
+        <span>Checklist prático baseado na relação estrogênio e melatonina</span>
+        <span class="cta-bonus-valor">Valor: R$ 27,00 — incluso hoje</span>
       </div>
     </div>
-    <a href="#" class="btn-comprar">Quero o Protocolo agora — R$ 47,90</a>
+
+    <a href="#" class="btn-comprar">Quero Acessar o Método Agora</a>
     <div class="cta-seals">
       <span class="cta-seal">🔒 Pagamento seguro</span>
       <span class="cta-seal">⚡ Acesso imediato</span>
@@ -607,7 +584,7 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
     <div class="garantia-box reveal">
       <div class="garantia-icon">🛡</div>
       <h3>7 dias de garantia total</h3>
-      <p>Aplique o Protocolo por 7 dias. Se não sentir diferença, basta enviar um e-mail e devolvemos 100% do valor — sem perguntas, sem burocracia. O risco é nosso.</p>
+      <p>Aplique o Método por 7 dias. Se não sentir diferença, basta enviar um e-mail e devolvemos 100% do valor — sem perguntas, sem burocracia.</p>
     </div>
   </div>
 </section>
@@ -615,31 +592,13 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
 <!-- FAQ -->
 <section class="faq-section">
   <div class="container">
-    <div class="faq-intro reveal">
-      <span class="eyebrow">Dúvidas frequentes</span>
-      <h2>Antes de decidir</h2>
-    </div>
+    <div class="faq-intro reveal"><span class="eyebrow">Dúvidas frequentes</span><h2>Antes de decidir</h2></div>
     <div class="faq-list">
-      <div class="faq-item reveal">
-        <div class="faq-q">Isso funciona se eu ainda menstruo mas tenho sintomas?</div>
-        <div class="faq-a">Sim. A perimenopausa — fase de transição antes da menopausa — já causa todos os 5 pontos: insônia, mudança de peso, irritação, queda de libido e alteração de humor. O Protocolo atua em toda essa fase.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">Preciso parar de tomar meus suplementos?</div>
-        <div class="faq-a">Não necessariamente. O Protocolo não é contra suplementos — é contra depender só deles sem entender a raiz do problema. Muitas mulheres percebem que precisam de muito menos depois de aplicar o método.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">Como acesso depois do pagamento?</div>
-        <div class="faq-a">Imediatamente. Assim que o pagamento é confirmado, você recebe o link no e-mail. Em minutos já está aplicando.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">Isso substitui meu ginecologista?</div>
-        <div class="faq-a">Não. O Protocolo te dá o conhecimento para entender o que está acontecendo e para chegar ao médico fazendo as perguntas certas. Ele complementa — não substitui — o acompanhamento clínico.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">E se eu não tiver resultado?</div>
-        <div class="faq-a">7 dias de garantia total. Pediu, devolvemos. Sem questionamento. Você não tem nada a perder — e tem sua vida de volta a ganhar.</div>
-      </div>
+      <div class="faq-item reveal"><div class="faq-q">Funciona se eu ainda menstruo mas já tenho sintomas?</div><div class="faq-a">Sim. A perimenopausa já causa todos os 5 pontos. O Método atua em toda essa fase de transição.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Preciso parar de tomar meus suplementos?</div><div class="faq-a">Não. O Método não é contra suplementos — é contra depender só deles sem tratar a raiz. Muitas mulheres percebem que precisam de muito menos depois de aplicar.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Como acesso depois do pagamento?</div><div class="faq-a">Imediatamente. Assim que o pagamento é confirmado, você recebe o link no e-mail. Em minutos já está aplicando.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Isso substitui meu ginecologista?</div><div class="faq-a">Não. O Método complementa o acompanhamento clínico — e te ajuda a chegar ao médico fazendo as perguntas certas.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">E se eu não tiver resultado?</div><div class="faq-a">7 dias de garantia total. Pediu, devolvemos. Sem questionamento.</div></div>
     </div>
   </div>
 </section>
@@ -654,494 +613,22 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
 
 <!-- STICKY BAR -->
 <div class="sticky-cta" id="stickyBar">
-  <span>Protocolo Cérebro & Menopausa — R$ 97 por R$ 47,90 hoje</span>
-  <a href="#comprar">Garantir agora</a>
-</div>
-
-
-<!-- HERO -->
-<section class="hero">
-  <!-- SVG neurônios de fundo -->
-  <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.18" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <style>
-        .np{fill:#C9A96E}
-        .na{fill:none;stroke:#C9A96E;stroke-width:0.8}
-        @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
-        @keyframes dash{to{stroke-dashoffset:-40}}
-        .p1{animation:pulse 3.2s ease-in-out infinite}
-        .p2{animation:pulse 4.1s ease-in-out 0.8s infinite}
-        .p3{animation:pulse 2.8s ease-in-out 1.4s infinite}
-        .p4{animation:pulse 3.7s ease-in-out 0.3s infinite}
-        .p5{animation:pulse 4.5s ease-in-out 1.1s infinite}
-        .ax{stroke-dasharray:8 4;animation:dash 2s linear infinite}
-        @media(prefers-reduced-motion:reduce){.p1,.p2,.p3,.p4,.p5,.ax{animation:none}}
-      </style>
-    </defs>
-    <!-- Axônios / conexões -->
-    <line class="na ax" x1="180" y1="120" x2="420" y2="200"/>
-    <line class="na ax" x1="420" y1="200" x2="680" y2="140"/>
-    <line class="na ax" x1="680" y1="140" x2="920" y2="260"/>
-    <line class="na ax" x1="920" y1="260" x2="1150" y2="180"/>
-    <line class="na ax" x1="1150" y1="180" x2="1320" y2="300"/>
-    <line class="na ax" x1="420" y1="200" x2="520" y2="420"/>
-    <line class="na ax" x1="680" y1="140" x2="740" y2="380"/>
-    <line class="na ax" x1="920" y1="260" x2="860" y2="500"/>
-    <line class="na ax" x1="1150" y1="180" x2="1100" y2="430"/>
-    <line class="na ax" x1="200" y1="500" x2="420" y2="200" opacity="0.5"/>
-    <line class="na ax" x1="520" y1="420" x2="740" y2="380"/>
-    <line class="na ax" x1="740" y1="380" x2="860" y2="500"/>
-    <line class="na ax" x1="860" y1="500" x2="1100" y2="430"/>
-    <line class="na ax" x1="1100" y1="430" x2="1350" y2="560"/>
-    <line class="na ax" x1="80"  y1="340" x2="200" y2="500" opacity="0.4"/>
-    <line class="na ax" x1="1320" y1="300" x2="1440" y2="200" opacity="0.4"/>
-    <!-- Dendritos finos -->
-    <line class="na" x1="180" y1="120" x2="100" y2="60"  stroke-width="0.5" opacity="0.5"/>
-    <line class="na" x1="180" y1="120" x2="140" y2="200" stroke-width="0.5" opacity="0.5"/>
-    <line class="na" x1="680" y1="140" x2="650" y2="60"  stroke-width="0.5" opacity="0.5"/>
-    <line class="na" x1="920" y1="260" x2="970" y2="190" stroke-width="0.5" opacity="0.5"/>
-    <line class="na" x1="520" y1="420" x2="470" y2="490" stroke-width="0.5" opacity="0.5"/>
-    <line class="na" x1="860" y1="500" x2="820" y2="580" stroke-width="0.5" opacity="0.5"/>
-    <line class="na" x1="1100" y1="430" x2="1160" y2="490" stroke-width="0.5" opacity="0.5"/>
-    <!-- Corpos celulares (somas) -->
-    <circle class="np p1" cx="180"  cy="120" r="5"/>
-    <circle class="np p2" cx="420"  cy="200" r="7"/>
-    <circle class="np p3" cx="680"  cy="140" r="5.5"/>
-    <circle class="np p1" cx="920"  cy="260" r="7"/>
-    <circle class="np p4" cx="1150" cy="180" r="5"/>
-    <circle class="np p5" cx="1320" cy="300" r="4"/>
-    <circle class="np p2" cx="520"  cy="420" r="6"/>
-    <circle class="np p3" cx="740"  cy="380" r="5"/>
-    <circle class="np p1" cx="860"  cy="500" r="7"/>
-    <circle class="np p4" cx="1100" cy="430" r="5.5"/>
-    <circle class="np p5" cx="200"  cy="500" r="4"/>
-    <circle class="np p2" cx="80"   cy="340" r="3.5"/>
-    <circle class="np p3" cx="1350" cy="560" r="4"/>
-    <!-- Anéis externos (glows) -->
-    <circle class="na p2" cx="420"  cy="200" r="14" opacity="0.3"/>
-    <circle class="na p1" cx="920"  cy="260" r="14" opacity="0.3"/>
-    <circle class="na p3" cx="860"  cy="500" r="14" opacity="0.3"/>
-  </svg>
-
-  <span class="hero-eyebrow" style="position:relative">Instituto Iris Bazilio</span>
-  <h1 style="position:relative">Você não está <em>enlouquecendo.</em><br>Mas o seu corpo está gritando<br>que algo precisa mudar — agora.</h1>
-  <p class="hero-sub" style="margin-top:24px;position:relative">Descubra o método baseado em neurociência que devolve seu sono, seu humor, sua libido e sua vitalidade — sem depender de remédios caros ou de médicos que dizem "é normal da idade".</p>
-
-  <div class="hero-img-wrap" style="position:relative">
-    <img src="imagemheadlinemenopausa.png" alt="Dra. Iris Bazilio — Protocolo Cérebro e Menopausa">
-    <div class="hero-img-fade"></div>
-  </div>
-</section>
-
-<!-- DOR -->
-<section class="dor-section">
-  <div class="container">
-    <div class="dor-intro reveal">
-      <span class="eyebrow">Seja honesta consigo mesma</span>
-      <h2>Quantas dessas frases <em>você pensa</em> toda semana?</h2>
-    </div>
-
-    <div class="dor-blocos reveal">
-      <div class="dor-bloco"><div class="dor-x">✕</div><div class="dor-bloco-txt"><strong>Não consigo dormir a noite toda.</strong>Acordo às 3h, fico revirando na cama, chego no dia seguinte destruída.</div></div>
-      <div class="dor-bloco"><div class="dor-x">✕</div><div class="dor-bloco-txt"><strong>Meu humor está fora do meu controle.</strong>Choro sem motivo, irrito com qualquer coisa, depois me sinto culpada.</div></div>
-      <div class="dor-bloco"><div class="dor-x">✕</div><div class="dor-bloco-txt"><strong>Minha memória está falhando.</strong>Esqueço palavras no meio da frase. Entro num cômodo e não sei por que fui.</div></div>
-      <div class="dor-bloco"><div class="dor-x">✕</div><div class="dor-bloco-txt"><strong>O desejo sexual simplesmente sumiu.</strong>Não sinto mais nada. Me distancio do meu parceiro. Isso me envergonha.</div></div>
-      <div class="dor-bloco"><div class="dor-x">✕</div><div class="dor-bloco-txt"><strong>Meu corpo não me obedece mais.</strong>Ganho peso sem comer diferente. Minha pele mudou. Minha energia acabou.</div></div>
-      <div class="dor-bloco"><div class="dor-x">✕</div><div class="dor-bloco-txt"><strong>Tenho vergonha de falar sobre isso.</strong>Finjo que está tudo bem. Mas por dentro me sinto perdida, sozinha e exausta.</div></div>
-    </div>
-
-    <div class="dor-corte reveal">
-      <p>"Se você se reconheceu em pelo menos duas dessas frases, saiba: não é fraqueza, não é envelhecimento acelerado, não é sua cabeça. É biologia. E biologia tem solução."</p>
-      <span>— Dra. Iris Bazilio</span>
-    </div>
-  </div>
-</section>
-
-<!-- AGITAÇÃO -->
-<section class="agit-section">
-  <div class="container">
-    <div class="agit-intro reveal">
-      <span class="eyebrow">O que ninguém te conta</span>
-      <h2>O pior não é a menopausa.<br>É <em>atravessá-la às cegas.</em></h2>
-      <p>Você vai ao médico. Ele mede alguns hormônios, diz que está "dentro do esperado" e te manda embora com um ansiolítico. Ou pior: diz que é "normal da idade" e que você precisa "aceitar".</p>
-    </div>
-
-    <div class="agit-lista">
-      <div class="agit-item reveal"><strong>Aceitar não é uma opção.</strong> Você vai passar até 40% do resto da sua vida nessa fase. Sobreviver não é suficiente.</div>
-      <div class="agit-item reveal"><strong>Ansiolítico não resolve.</strong> Ele tapa o sintoma. A raiz continua lá, destruindo seu sono, seu relacionamento e sua autoestima.</div>
-      <div class="agit-item reveal"><strong>Ninguém te ensinou sobre o seu próprio cérebro.</strong> O estrogênio não cuida só dos ovários — ele protege sua memória, seu humor, seu sono, seu desejo. Quando ele cai, tudo cai junto.</div>
-      <div class="agit-item reveal"><strong>Cada mês que passa sem agir, é mais difícil recuperar.</strong> O cérebro feminino muda durante a menopausa. Quanto mais cedo você age, mais rápido recupera.</div>
-    </div>
-  </div>
-</section>
-
-<!-- CIÊNCIA -->
-<section class="ciencia-section">
-  <div class="container">
-    <div class="ciencia-intro reveal">
-      <span class="eyebrow" style="color:var(--gold)">A ciência que muda tudo</span>
-      <h2>Seu cérebro tem receptores de estrogênio.<br>Quando o hormônio cai, <em>o cérebro sente primeiro.</em></h2>
-      <p>Isso não é opinião. É o que neurocientistas de Harvard provaram com exames de PET scan — imagens reais do cérebro feminino antes e depois da menopausa. A diferença é visível. E reversível.</p>
-    </div>
-
-    <div class="ciencia-numeros reveal">
-      <div class="ciencia-num-card">
-        <div class="num">75%</div>
-        <p>das mulheres desenvolvem sintomas neurológicos durante a menopausa — e a maioria nunca recebe uma explicação real</p>
-      </div>
-      <div class="ciencia-num-card">
-        <div class="num">40%</div>
-        <p>da sua vida será vivida após a menopausa. É tempo demais para desperdiçar sobrevivendo</p>
-      </div>
-      <div class="ciencia-num-card">
-        <div class="num">70%</div>
-        <p>das mulheres chegam à menopausa completamente desinformadas sobre o que está acontecendo com elas</p>
-      </div>
-    </div>
-
-    <div class="ciencia-bloco reveal">
-      <p>O hipocampo — memória. O hipotálamo — sono e temperatura. O córtex pré-frontal — foco e decisão. <strong>Todos cheios de receptores de estrogênio. Todos afetados quando o hormônio cai.</strong> Agora você entende por que tudo parece desmoronar ao mesmo tempo. E por que existe um caminho de saída.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SOLUÇÃO -->
-<section class="solucao-section">
-  <div class="container">
-    <div class="solucao-intro reveal">
-      <div class="solucao-tag">A solução</div>
-      <h2>Conheça o <em>Protocolo Cérebro &amp; Menopausa</em></h2>
-      <p>O método completo da Dra. Iris Bazilio para recuperar seu sono, seu humor, sua libido e sua vitalidade — com base em neurociência, sem depender de remédios caros e sem aceitar que "é assim mesmo".</p>
-    </div>
-
-    <div class="solucao-inner">
-      <div class="produto-visual reveal">
-        <div class="produto-subtitulo">Método digital completo</div>
-        <div class="produto-nome">Protocolo<br>Cérebro &amp; Menopausa</div>
-        <img src="capaprodutomenopausa.png" alt="Protocolo Cérebro &amp; Menopausa — Dra. Iris Bazilio" style="width:100%;border-radius:6px;display:block;margin-bottom:20px">
-        <div class="produto-badge">Acesso imediato</div>
-      </div>
-
-      <div class="modulos reveal">
-        <div class="modulo">
-          <div class="modulo-num">1</div>
-          <div class="modulo-txt">
-            <strong>O que está acontecendo no seu cérebro</strong>
-            <span>A explicação real — em linguagem humana — de por que você se sente assim. Sem julgamento, sem "é normal".</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">2</div>
-          <div class="modulo-txt">
-            <strong>Como recuperar o sono de verdade</strong>
-            <span>O protocolo de sono baseado na relação entre estrogênio, melatonina e hipotálamo. Você vai dormir de novo.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">3</div>
-          <div class="modulo-txt">
-            <strong>Humor, ansiedade e irritação sob controle</strong>
-            <span>Como regular as emoções quando os hormônios estão em colapso — sem ansiolítico, sem depender de força de vontade.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">4</div>
-          <div class="modulo-txt">
-            <strong>Memória e clareza mental de volta</strong>
-            <span>Estratégias baseadas em neuroplasticidade para proteger e recuperar seu hipocampo durante a transição.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">5</div>
-          <div class="modulo-txt">
-            <strong>Como recuperar o desejo e a sexualidade</strong>
-            <span>A libido não morreu — ela está bloqueada. Você vai entender por quê e como desbloqueá-la, com base científica e sem tabu.</span>
-          </div>
-        </div>
-        <div class="modulo">
-          <div class="modulo-num">6</div>
-          <div class="modulo-txt">
-            <strong>Alimentação e estilo de vida que protegem o cérebro</strong>
-            <span>O que comer, o que evitar, e como viver para elevar naturalmente seus níveis de estrogênio e serotonina.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRANSFORMAÇÃO -->
-<section class="transf-section">
-  <div class="container-wide">
-    <div class="transf-intro reveal">
-      <span class="eyebrow">A diferença é real</span>
-      <h2>Como é a vida <em>antes</em> e <em>depois</em> do Protocolo</h2>
-    </div>
-
-    <!-- MOBILE: cards empilhados -->
-    <div class="transf-cards reveal">
-
-      <div class="transf-card">
-        <div class="transf-card-sem">
-          <div class="transf-label-sem">✕ &nbsp;Hoje</div>
-          <p>Acorda várias vezes por noite, exausta de manhã</p>
-        </div>
-        <div class="transf-divisor"><div class="transf-divisor-linha"></div><div class="transf-divisor-seta">↓ com o protocolo</div><div class="transf-divisor-linha"></div></div>
-        <div class="transf-card-com">
-          <div class="transf-label-com">✓ &nbsp;Resultado</div>
-          <p>Dorme a noite toda e acorda com energia real</p>
-        </div>
-      </div>
-
-      <div class="transf-card">
-        <div class="transf-card-sem">
-          <div class="transf-label-sem">✕ &nbsp;Hoje</div>
-          <p>Irritada e chorosa sem motivo, se culpa por isso</p>
-        </div>
-        <div class="transf-divisor"><div class="transf-divisor-linha"></div><div class="transf-divisor-seta">↓ com o protocolo</div><div class="transf-divisor-linha"></div></div>
-        <div class="transf-card-com">
-          <div class="transf-label-com">✓ &nbsp;Resultado</div>
-          <p>Emoções estáveis, consegue reagir ao invés de explodir</p>
-        </div>
-      </div>
-
-      <div class="transf-card">
-        <div class="transf-card-sem">
-          <div class="transf-label-sem">✕ &nbsp;Hoje</div>
-          <p>Esquece palavras, nomes, onde colocou as coisas</p>
-        </div>
-        <div class="transf-divisor"><div class="transf-divisor-linha"></div><div class="transf-divisor-seta">↓ com o protocolo</div><div class="transf-divisor-linha"></div></div>
-        <div class="transf-card-com">
-          <div class="transf-label-com">✓ &nbsp;Resultado</div>
-          <p>Clareza mental de volta, memória funcionando</p>
-        </div>
-      </div>
-
-      <div class="transf-card">
-        <div class="transf-card-sem">
-          <div class="transf-label-sem">✕ &nbsp;Hoje</div>
-          <p>Desejo sexual zerado, se afasta do parceiro</p>
-        </div>
-        <div class="transf-divisor"><div class="transf-divisor-linha"></div><div class="transf-divisor-seta">↓ com o protocolo</div><div class="transf-divisor-linha"></div></div>
-        <div class="transf-card-com">
-          <div class="transf-label-com">✓ &nbsp;Resultado</div>
-          <p>Libido recuperada, intimidade e prazer de volta</p>
-        </div>
-      </div>
-
-      <div class="transf-card">
-        <div class="transf-card-sem">
-          <div class="transf-label-sem">✕ &nbsp;Hoje</div>
-          <p>Fogachos que aparecem na hora mais errada possível</p>
-        </div>
-        <div class="transf-divisor"><div class="transf-divisor-linha"></div><div class="transf-divisor-seta">↓ com o protocolo</div><div class="transf-divisor-linha"></div></div>
-        <div class="transf-card-com">
-          <div class="transf-label-com">✓ &nbsp;Resultado</div>
-          <p>Controle da temperatura corporal com estratégias práticas</p>
-        </div>
-      </div>
-
-      <div class="transf-card">
-        <div class="transf-card-sem">
-          <div class="transf-label-sem">✕ &nbsp;Hoje</div>
-          <p>Se sente invisível, sem vitalidade, sem desejo de viver</p>
-        </div>
-        <div class="transf-divisor"><div class="transf-divisor-linha"></div><div class="transf-divisor-seta">↓ com o protocolo</div><div class="transf-divisor-linha"></div></div>
-        <div class="transf-card-com">
-          <div class="transf-label-com">✓ &nbsp;Resultado</div>
-          <p>Reconhece a mulher no espelho — e gosta do que vê</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- DESKTOP: tabela -->
-    <div class="transf-table-wrap reveal">
-      <table class="transf-table">
-        <thead>
-          <tr><th class="col-sem">Hoje — sem o Protocolo</th><th class="col-com">Depois do Protocolo</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="c-sem">Acorda várias vezes por noite, exausta de manhã</td><td class="c-com">Dorme a noite toda e acorda com energia real</td></tr>
-          <tr><td class="c-sem">Irritada e chorosa sem motivo, se culpa por isso</td><td class="c-com">Emoções estáveis, consegue reagir ao invés de explodir</td></tr>
-          <tr><td class="c-sem">Esquece palavras, nomes, onde colocou as coisas</td><td class="c-com">Clareza mental de volta, memória funcionando</td></tr>
-          <tr><td class="c-sem">Desejo sexual zerado, se afasta do parceiro</td><td class="c-com">Libido recuperada, intimidade e prazer de volta</td></tr>
-          <tr><td class="c-sem">Fogachos que aparecem na hora mais errada possível</td><td class="c-com">Controle da temperatura corporal com estratégias práticas</td></tr>
-          <tr><td class="c-sem">Médico diz "é normal" e manda embora</td><td class="c-com">Chega ao médico informada, faz as perguntas certas</td></tr>
-          <tr><td class="c-sem">Se sente invisível, sem vitalidade, sem desejo de viver</td><td class="c-com">Reconhece a mulher no espelho — e gosta do que vê</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- BIO -->
-<section class="bio-section">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="eyebrow">Quem criou este protocolo</span>
-      <h2>Dra. Iris Bazilio</h2>
-    </div>
-    <div class="bio-inner">
-      <div class="bio-foto reveal">
-        <img src="imagem_iris.jpg" alt="Dra. Iris Bazilio" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:6px;display:block">
-      </div>
-      <div class="bio-texto reveal">
-        <p><strong style="color:var(--gold2)">Iris Bazilio Ribeiro</strong> é Enfermeira há 28 anos, Doutora e Mestre em Saúde da Mulher e Oncologia. Servidora Pública Federal do INCA e da UFRJ, pesquisadora, especialista em Neurociências e Sexualidade.</p>
-        <p>Criou o <strong style="color:var(--gold2)">Ambulatório de Sexualidade</strong> para mulheres com câncer de mama — iniciativa pioneira de reabilitação sexual baseada em neurociência. Passou pela menopausa. Sentiu cada um dos sintomas. E em vez de aceitar, pesquisou.</p>
-        <p>Este protocolo é o resultado de décadas de prática clínica, pesquisa científica e vivência pessoal — condensado para que você não precise esperar anos para ter as respostas que ninguém te deu.</p>
-        <div class="bio-creds">
-          <div class="cred">Doutora em Saúde da Mulher</div>
-          <div class="cred">Especialista em Neurociências · PUC</div>
-          <div class="cred">INCA e UFRJ</div>
-          <div class="cred">28 anos de prática clínica</div>
-          <div class="cred">Reprogramação Mental</div>
-          <div class="cred">MBA em Coaching</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section class="depo-section">
-  <div class="container-wide">
-    <div class="depo-intro reveal">
-      <span class="eyebrow">Resultados reais</span>
-      <h2>Mulheres que <em>pararam de sobreviver</em><br>e voltaram a viver.</h2>
-    </div>
-    <div class="depo-grid">
-      <div class="depo-card reveal">
-        <div class="depo-txt">"Achei que nunca mais ia dormir direito. Em três semanas aplicando o que aprendi, comecei a acordar descansada pela primeira vez em dois anos. Parece milagre, mas é ciência."</div>
-        <div class="depo-autor">[ Nome da aluna — inserir depoimento real ]</div>
-        <div class="depo-stars">★★★★★</div>
-      </div>
-      <div class="depo-slot reveal">[ Inserir print de depoimento — WhatsApp ou Instagram ]</div>
-      <div class="depo-slot reveal">[ Inserir print de depoimento — WhatsApp ou Instagram ]</div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-section" id="comprar">
-  <h2>Você já perdeu tempo suficiente<br><em>sobrevivendo</em> à menopausa.</h2>
-  <p class="cta-sub">Sono. Humor. Memória. Libido. Vitalidade. Tudo isso pode voltar. A ciência prova. A Dra. Iris ensina. Você decide.</p>
-
-  <!-- ESCASSEZ -->
-  <div class="escassez-bar">
-    <strong>⚠ Oferta de lançamento — válida somente hoje, <span id="data-hoje"></span></strong>
-    Este preço especial expira à meia-noite. Após o encerramento, o valor volta para R$ 97,00.
-  </div>
-
-  <!-- TIMER -->
-  <div class="timer-wrap">
-    <div class="timer-bloco"><span class="timer-num" id="t-h">00</span><span class="timer-label">horas</span></div>
-    <div class="timer-sep">:</div>
-    <div class="timer-bloco"><span class="timer-num" id="t-m">29</span><span class="timer-label">min</span></div>
-    <div class="timer-sep">:</div>
-    <div class="timer-bloco"><span class="timer-num" id="t-s">59</span><span class="timer-label">seg</span></div>
-  </div>
-
-  <div class="cta-box">
-    <div class="cta-nome-prod">Protocolo Cérebro &amp; Menopausa</div>
-    <div class="cta-sub-prod">Dra. Iris Bazilio · Acesso imediato</div>
-
-    <!-- PREÇO RISCADO EM DESTAQUE -->
-    <div class="preco-de-bloco">
-      <span class="preco-de-valor">R$ 97,00</span>
-      <span class="preco-de-badge">51% OFF</span>
-    </div>
-    <div class="cta-por">R$ 47,90</div>
-    <div class="cta-parc">ou 2× de R$ 24,95 no cartão</div>
-
-    <!-- BENEFÍCIOS -->
-    <ul class="cta-beneficios">
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Como recuperar o sono profundo — protocolo passo a passo</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Controle de humor, ansiedade e irritação sem remédio</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Memória e foco de volta com neuroplasticidade</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Como recuperar a libido e a sexualidade</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Alimentação e hábitos que protegem seu cérebro</li>
-      <li class="cta-beneficio"><span class="cta-beneficio-icon">✓</span>Acesso imediato · Vitalício · Formato digital</li>
-    </ul>
-
-    <!-- BÔNUS -->
-    <div class="cta-bonus">
-      <div class="cta-bonus-icon">🎁</div>
-      <div class="cta-bonus-txt">
-        <strong>Bônus: Guia de Sono Reparador</strong>
-        <span>Checklist prático para dormir a noite toda — baseado na relação estrogênio e melatonina</span>
-        <span class="cta-bonus-valor">Valor: R$ 27,00 — grátis hoje</span>
-      </div>
-    </div>
-
-    <a href="#" class="btn-comprar">Quero o Protocolo agora — R$ 47,90</a>
-    <div class="cta-seals">
-      <span class="cta-seal">🔒 Pagamento seguro</span>
-      <span class="cta-seal">⚡ Acesso imediato</span>
-      <span class="cta-seal">↩ 7 dias de garantia</span>
-    </div>
-  </div>
-</section>
-
-<!-- GARANTIA -->
-<section class="garantia-section">
-  <div class="container">
-    <div class="garantia-box reveal">
-      <div class="garantia-icon">🛡</div>
-      <h3>7 dias de garantia total</h3>
-      <p>Acesse o Protocolo, aplique, sinta. Se em 7 dias você não sentir que valeu cada centavo, basta enviar um e-mail. Devolvemos 100% do valor — sem perguntas, sem burocracia. O risco é nosso.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="container">
-    <div class="faq-intro reveal">
-      <span class="eyebrow">Dúvidas frequentes</span>
-      <h2>Antes de decidir</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item reveal">
-        <div class="faq-q">Para quem é este Protocolo?</div>
-        <div class="faq-a">Para mulheres entre 40 e 60 anos que estão na perimenopausa, menopausa ou pós-menopausa e estão cansadas de ouvir "é normal da idade". Se você quer resultados reais — sono, humor, libido, vitalidade — este Protocolo é para você.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">Preciso ter formação na área de saúde?</div>
-        <div class="faq-a">Não. A Dra. Iris escreveu para mulheres, não para médicos. A linguagem é clara, direta e humana. Se você entende esse texto, vai entender o Protocolo.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">Como acesso depois do pagamento?</div>
-        <div class="faq-a">Imediatamente. Assim que o pagamento é confirmado, você recebe o link de acesso no e-mail. Em minutos você já está aplicando.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">Isso substitui meu médico?</div>
-        <div class="faq-a">Não. O Protocolo te dá o conhecimento para agir com inteligência — e para chegar ao médico fazendo as perguntas certas. Ele não substitui acompanhamento clínico, ele potencializa.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q">E se eu não tiver resultados?</div>
-        <div class="faq-a">7 dias de garantia total. Pediu, devolvemos. Sem questionamento. Você não tem nada a perder — e tem sua vida de volta a ganhar.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p><strong style="color:rgba(255,255,255,0.5)">Instituto Iris Bazilio</strong></p>
-  <p>irisbazilio.com</p>
-  <p style="margin-top:14px">Este produto é educativo e não substitui consulta médica ou diagnóstico profissional.<br>
-  © 2025 Instituto Iris Bazilio. Todos os direitos reservados.</p>
-  <p style="margin-top:10px"><a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></p>
-</footer>
-
-<!-- STICKY BAR -->
-<div class="sticky-cta" id="stickyBar">
-  <span>Protocolo Cérebro &amp; Menopausa — Dra. Iris Bazilio</span>
-  <a href="#comprar">Garantir por R$ 47,90</a>
+  <span>Método NeuroEquilíbrio Feminino™ — Dra. Iris Bazilio</span>
+  <a href="#comprar">Quero Começar Agora</a>
 </div>
 
 <script>
+
+function toggleQuiz(el) {
+  el.classList.toggle('checked');
+  const total = document.querySelectorAll('.quiz-item.checked').length;
+  const alerta = document.getElementById('quiz-alerta');
+  const ok = document.getElementById('quiz-ok');
+  if(total >= 3){ alerta.classList.add('show'); alerta.style.display='block'; ok.style.display='none'; }
+  else if(total > 0){ ok.classList.add('show'); ok.style.display='block'; alerta.style.display='none'; }
+  else{ alerta.style.display='none'; ok.style.display='none'; }
+}
+
 const reveals=document.querySelectorAll('.reveal');
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
 reveals.forEach(r=>obs.observe(r));
@@ -1158,39 +645,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   });
 });
 
-// DATA DE HOJE + TIMER ATÉ MEIA-NOITE
-(function(){
-  const dias=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
-  const meses=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 
-  function getMeiaNoite(){
-    const agora=new Date();
-    return new Date(agora.getFullYear(),agora.getMonth(),agora.getDate(),23,59,59,999);
-  }
-
-  // Data de hoje por extenso
-  const agora=new Date();
-  const dataEl=document.getElementById('data-hoje');
-  if(dataEl){
-    dataEl.textContent=dias[agora.getDay()]+', '+agora.getDate()+' de '+meses[agora.getMonth()];
-  }
-
-  const h=document.getElementById('t-h');
-  const m=document.getElementById('t-m');
-  const s=document.getElementById('t-s');
-
-  function tick(){
-    const diff=Math.max(0,getMeiaNoite()-Date.now());
-    const hh=Math.floor(diff/3600000);
-    const mm=Math.floor((diff%3600000)/60000);
-    const ss=Math.floor((diff%60000)/1000);
-    h.textContent=String(hh).padStart(2,'0');
-    m.textContent=String(mm).padStart(2,'0');
-    s.textContent=String(ss).padStart(2,'0');
-    setTimeout(tick,1000);
-  }
-  tick();
-})();
 </script>
 </body>
 </html>
