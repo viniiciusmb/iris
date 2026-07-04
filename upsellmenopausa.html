@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oferta Exclusiva — Desafio da Transformação · Dra. Iris Bazilio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0e0b0f;
+      --bg2:#160e18;
+      --bg3:#1e1320;
+      --gold:#c9a84c;
+      --gold2:#e8cc80;
+      --cream:#f5efe6;
+      --dim:#c8bdb0;
+      --border:rgba(201,168,76,.18);
+      --green:#1a6b3a;
+      --green2:#22913e;
+    }
+    html,body{background:var(--bg);color:var(--cream);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+    /* ── TOP BAR ── */
+    .topbar{background:var(--gold);padding:10px 20px;text-align:center}
+    .topbar p{font-size:13px;font-weight:600;color:#0e0b0f;letter-spacing:.04em}
+    .topbar strong{font-weight:700}
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(180deg,#1a0d1e 0%,var(--bg) 100%);padding:52px 20px 48px;text-align:center;position:relative}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(201,168,76,.12) 0%,transparent 70%);pointer-events:none}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,5.5vw,52px);font-weight:700;line-height:1.16;color:#fff;max-width:740px;margin:0 auto 20px}
+    .hero h1 em{font-style:italic;color:var(--gold2)}
+    .hero-sub{font-size:clamp(15px,2.5vw,18px);font-weight:300;color:var(--dim);max-width:560px;margin:0 auto 36px;line-height:1.7}
+    .hero-sub strong{color:var(--cream);font-weight:500}
+
+    /* ── SECTION ── */
+    section{padding:64px 20px}
+    .container{max-width:720px;margin:0 auto}
+    .sec-label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    .sec-title{font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,38px);font-weight:700;line-height:1.22;color:#fff;margin-bottom:16px}
+    .sec-title em{font-style:italic;color:var(--gold2)}
+    .sec-body{font-size:16px;font-weight:300;color:var(--dim);line-height:1.8}
+    .sec-body strong{color:var(--cream);font-weight:500}
+
+    .divider{border:none;border-top:1px solid var(--border);margin:0}
+
+    /* ── UPSELL HOOK ── */
+    .hook{background:var(--bg2);padding:36px 20px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .hook-inner{max-width:680px;margin:0 auto}
+    .hook p{font-family:'Playfair Display',serif;font-size:clamp(18px,3.5vw,28px);font-style:italic;color:#fff;line-height:1.5;margin-bottom:10px}
+    .hook small{font-size:14px;color:var(--dim)}
+
+    /* ── DOR CARDS ── */
+    .dor-section{background:var(--bg)}
+    .dor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:36px}
+    .dor-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden}
+    .dor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#5b21b6,var(--gold))}
+    .dor-icon{font-size:28px;margin-bottom:12px;display:block}
+    .dor-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#fff;margin-bottom:6px}
+    .dor-text{font-size:14px;color:var(--dim);line-height:1.7}
+
+    /* ── PRODUTO ── */
+    .produto-section{background:var(--bg2)}
+    .dias-list{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+    .dia{display:flex;gap:16px;align-items:flex-start;background:var(--bg);border:1px solid rgba(201,168,76,.1);border-radius:10px;padding:18px}
+    .dia-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#4c1d95,#6d28d9);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff}
+    .dia-title{font-size:15px;font-weight:600;color:var(--cream);margin-bottom:3px}
+    .dia-text{font-size:13px;color:var(--dim);line-height:1.6}
+
+    /* ── OFERTA ── */
+    .oferta-section{background:linear-gradient(180deg,var(--bg) 0%,#1a0f2e 100%);padding:64px 20px}
+    .oferta-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px 32px;position:relative;overflow:hidden;max-width:720px;margin:0 auto}
+    .oferta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#4c1d95,var(--gold),#6d28d9)}
+    .preco-bloco{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:24px;margin:28px 0;text-align:center}
+    .preco-de{font-size:16px;color:var(--dim);text-decoration:line-through}
+    .preco-por{font-family:'Playfair Display',serif;font-size:clamp(40px,7vw,64px);font-weight:700;color:var(--gold2);line-height:1}
+    .preco-parcela{font-size:14px;color:var(--dim);margin-top:6px}
+    .preco-parcela strong{color:var(--cream)}
+    .economia{display:inline-block;background:#1a6b3a;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:10px;letter-spacing:.05em}
+
+    .includes{margin:24px 0}
+    .includes-title{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+    .inc-item{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .inc-item:last-child{border-bottom:none}
+    .inc-check{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(34,145,62,.2);border:1px solid rgba(34,145,62,.4);display:flex;align-items:center;justify-content:center;margin-top:2px}
+    .inc-check svg{width:10px;height:10px}
+    .inc-text{font-size:14px;color:var(--dim);line-height:1.5}
+    .inc-text strong{color:var(--cream)}
+
+    /* ── BOTÃO ── */
+    @keyframes pulse{0%,100%{box-shadow:0 6px 32px rgba(34,145,62,.45)}50%{box-shadow:0 10px 48px rgba(34,145,62,.7)}}
+    .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:20px 32px;background:linear-gradient(180deg,#27a347 0%,#1a6b3a 100%);color:#fff;font-family:'Inter',sans-serif;font-size:clamp(16px,3vw,20px);font-weight:700;letter-spacing:.03em;border:none;border-radius:100px;cursor:pointer;text-decoration:none;animation:pulse 2.2s ease-in-out infinite;margin-top:4px}
+    .btn:hover{animation:none;background:linear-gradient(180deg,#2dbe52 0%,#1f8040 100%)}
+    .btn-sub{text-align:center;font-size:12px;color:var(--dim);margin-top:12px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+
+    /* ── GARANTIA ── */
+    .garantia{display:flex;gap:20px;align-items:flex-start;background:rgba(34,145,62,.06);border:1px solid rgba(34,145,62,.2);border-radius:12px;padding:24px;margin-top:28px}
+    .garantia-icon{font-size:44px;flex-shrink:0}
+    .garantia-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
+    .garantia-text{font-size:14px;color:var(--dim);line-height:1.7}
+
+    /* ── EXPERT ── */
+    .expert-section{background:var(--bg2)}
+    .expert-creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .cred{font-size:12px;font-weight:500;padding:4px 12px;border-radius:100px;background:rgba(76,29,149,.3);border:1px solid rgba(109,40,217,.4);color:var(--cream)}
+
+    /* ── FAQ ── */
+    .faq-section{background:var(--bg)}
+    details{border-bottom:1px solid rgba(255,255,255,.06);padding:18px 0}
+    details:first-of-type{border-top:1px solid rgba(255,255,255,.06)}
+    summary{font-size:16px;font-weight:500;color:var(--cream);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:'+';color:var(--gold);font-size:20px;flex-shrink:0;transition:transform .25s}
+    details[open] summary::after{transform:rotate(45deg)}
+    .faq-a{font-size:14px;color:var(--dim);line-height:1.8;padding-top:12px}
+
+    /* ── FOOTER ── */
+    footer{background:var(--bg2);border-top:1px solid rgba(255,255,255,.05);padding:28px 20px;text-align:center}
+    .footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:12px}
+    .footer-links a{font-size:12px;color:var(--dim);text-decoration:none}
+    .footer-copy{font-size:12px;color:rgba(200,189,176,.4)}
+
+    /* ── STICKY ── */
+    .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(14,11,15,.95);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:100;transform:translateY(100%);transition:transform .35s}
+    .sticky.show{transform:translateY(0)}
+    .sticky-text{font-size:13px;font-weight:500;color:var(--cream);display:none}
+    @media(min-width:480px){.sticky-text{display:block}}
+    .sticky .btn{width:auto;padding:12px 24px;font-size:14px;animation:none;box-shadow:0 4px 20px rgba(34,145,62,.4)}
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <p>🎉 Você acabou de garantir o <strong>Protocolo Cérebro & Menopausa</strong> — parabéns! Temos uma oferta exclusiva para você.</p>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="eyebrow">Oferta exclusiva para clientes do Protocolo Cérebro & Menopausa</p>
+  <h1>A menopausa tomou seu corpo.<br/>Mas ela também tomou <em>sua sexualidade.</em><br/>E isso ninguém te contou.</h1>
+  <p class="hero-sub">
+    Você resolveu os hormônios. Mas ainda existe uma parte de você que está <strong>bloqueada, apagada, ausente.</strong><br/>
+    A Dra. Iris Basilio criou um método específico pra isso. E hoje está disponível por um valor que <strong>nunca vai existir de novo.</strong>
+  </p>
+</section>
+
+<hr class="divider"/>
+
+<!-- HOOK -->
+<div class="hook">
+  <div class="hook-inner">
+    <p>"Tratei os hormônios. O sono melhorou. Mas o desejo... esse não voltou."</p>
+    <small>Essa é a frase que mais ouvimos de mulheres que passaram pela menopausa. E existe uma razão científica para isso.</small>
+  </div>
+</div>
+
+<!-- DOR -->
+<section class="dor-section">
+  <div class="container">
+    <p class="sec-label">Você se reconhece aqui?</p>
+    <h2 class="sec-title">O que a menopausa fez com a sua <em>sexualidade</em> que nenhum protocolo hormonal resolve</h2>
+    <div class="dor-grid">
+      <div class="dor-card">
+        <span class="dor-icon">🔒</span>
+        <p class="dor-title">O desejo simplesmente apagou</p>
+        <p class="dor-text">Não é falta de amor. Não é o relacionamento. É uma dor emocional que o seu sistema nervoso guarda há anos — e que travou tudo.</p>
+      </div>
+      <div class="dor-card">
+        <span class="dor-icon">🫥</span>
+        <p class="dor-title">Você está presente mas ausente</p>
+        <p class="dor-text">Faz pra agradar. Faz pra não decepcionar. Mas por dentro está completamente em outro lugar. E depois vem a culpa.</p>
+      </div>
+      <div class="dor-card">
+        <span class="dor-icon">⏳</span>
+        <p class="dor-title">Faz anos que não sente nada</p>
+        <p class="dor-text">Você foi normalizando. Achando que era fase. Que ia passar. Mas não passou. E no fundo você sabe que não nasceu pra viver assim.</p>
+      </div>
+      <div class="dor-card">
+        <span class="dor-icon">💔</span>
+        <p class="dor-title">A distância no casamento cresce</p>
+        <p class="dor-text">Ele percebe. Você percebe. Ninguém fala. E a cada semana sem intimidade, a sensação de solidão dentro do relacionamento aumenta.</p>
+      </div>
+    </div>
+    <p class="sec-body" style="margin-top:28px;padding:20px;background:var(--bg2);border-radius:12px;border-left:3px solid var(--gold)">
+      O Protocolo Cérebro & Menopausa tratou a raiz hormonal. Mas as <strong>dores emocionais que bloqueiam a sexualidade</strong> têm outra origem — e precisam de outro tratamento. É exatamente isso que o Desafio da Transformação faz.
+    </p>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- PRODUTO -->
+<section class="produto-section">
+  <div class="container">
+    <p class="sec-label">O método</p>
+    <h2 class="sec-title"><em>7 dias.</em> 7 dores emocionais.<br/>7 caminhos para se libertar.</h2>
+    <p class="sec-body">A Dra. Iris Basilio combina neurociência, reprogramação mental e terapia emocional para curar as dores que bloqueiam a sexualidade feminina — especialmente em mulheres que já passaram pela menopausa.</p>
+    <div class="dias-list">
+      <div class="dia"><div class="dia-num">1</div><div><p class="dia-title">Autossabotagem</p><p class="dia-text">O padrão que faz você sabotar seus próprios momentos de prazer — e como quebrá-lo.</p></div></div>
+      <div class="dia"><div class="dia-num">2</div><div><p class="dia-title">Amor Próprio</p><p class="dia-text">Reconecte-se com o seu valor e aprenda a receber amor sem culpa ou vergonha.</p></div></div>
+      <div class="dia"><div class="dia-num">3</div><div><p class="dia-title">Traumas de Infância</p><p class="dia-text">As memórias que seu sistema nervoso ainda carrega como ameaça — e como libertar.</p></div></div>
+      <div class="dia"><div class="dia-num">4</div><div><p class="dia-title">Ancestralidade</p><p class="dia-text">Os padrões emocionais herdados que você pode escolher soltar de uma vez.</p></div></div>
+      <div class="dia"><div class="dia-num">5</div><div><p class="dia-title">Luto</p><p class="dia-text">As perdas que ainda habitam o seu corpo — e como honrá-las sem se prender a elas.</p></div></div>
+      <div class="dia"><div class="dia-num">6</div><div><p class="dia-title">Relacionamentos</p><p class="dia-text">Os padrões que se repetem e como criar vínculos seguros, plenos e reais.</p></div></div>
+      <div class="dia"><div class="dia-num">7</div><div><p class="dia-title">Escassez Emocional</p><p class="dia-text">Reprograme a mentalidade de que você não merece prazer, amor e uma vida sexual plena.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- EXPERT -->
+<section class="expert-section">
+  <div class="container">
+    <p class="sec-label">Quem vai te guiar</p>
+    <h2 class="sec-title">Dra. Iris <em>Basilio</em></h2>
+    <p class="sec-body" style="margin-bottom:16px">
+      Enfermeira há 28 anos, Doutora em Saúde da Mulher, pesquisadora do INCA e docente da UFRJ. Fundadora do <strong>Ambulatório de Sexualidade para mulheres com câncer de mama no INCA</strong> — iniciativa pioneira de reabilitação hormonal e emocional com base em neurociência.<br/><br/>
+      Passou pela menopausa. Sentiu o desejo sumir. E em vez de aceitar, pesquisou — e criou o método que gostaria de ter tido quando mais precisava.
+    </p>
+    <div class="expert-creds">
+      <span class="cred">Enfermeira · 28 anos</span>
+      <span class="cred">Doutora em Saúde da Mulher</span>
+      <span class="cred">INCA · UFRJ</span>
+      <span class="cred">Neurociências</span>
+      <span class="cred">Sexualidade Feminina</span>
+      <span class="cred">Reprogramação Mental</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- OFERTA -->
+<section class="oferta-section" id="oferta">
+  <div class="oferta-box">
+    <p class="sec-label" style="text-align:center">Oferta exclusiva — apenas para clientes do Protocolo Cérebro & Menopausa</p>
+    <h2 class="sec-title" style="text-align:center">Desafio da Transformação:<br/><em>Cure suas dores emocionais</em><br/>e viva uma sexualidade plena</h2>
+
+    <div class="preco-bloco">
+      <p class="preco-de">De R$ 497,00</p>
+      <p class="preco-por">R$ 97,00</p>
+      <p class="preco-parcela">ou <strong>3× de R$ 33,64</strong> no cartão</p>
+      <span class="economia">80% OFF — Exclusivo pós-compra</span>
+    </div>
+
+    <div class="includes">
+      <p class="includes-title">O que você recebe</p>
+      <div class="inc-item"><div class="inc-check"><svg viewBox="0 0 10 10" fill="none" stroke="#22913e" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></div><p class="inc-text"><strong>7 aulas em vídeo</strong> — uma por dia, com a Iris guiando cada etapa</p></div>
+      <div class="inc-item"><div class="inc-check"><svg viewBox="0 0 10 10" fill="none" stroke="#22913e" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></div><p class="inc-text"><strong>7 apostilas de apoio</strong> — para aprofundar cada dor trabalhada</p></div>
+      <div class="inc-item"><div class="inc-check"><svg viewBox="0 0 10 10" fill="none" stroke="#22913e" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></div><p class="inc-text"><strong>7 ferramentas práticas</strong> — exercícios aplicáveis no mesmo dia</p></div>
+      <div class="inc-item"><div class="inc-check"><svg viewBox="0 0 10 10" fill="none" stroke="#22913e" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></div><p class="inc-text"><strong>7 técnicas de reprogramação mental</strong> — baseadas em neurociência</p></div>
+      <div class="inc-item"><div class="inc-check"><svg viewBox="0 0 10 10" fill="none" stroke="#22913e" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></div><p class="inc-text"><strong>Bônus 1:</strong> Workshop "A Chave para um Relacionamento Feliz"</p></div>
+      <div class="inc-item"><div class="inc-check"><svg viewBox="0 0 10 10" fill="none" stroke="#22913e" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></div><p class="inc-text"><strong>Bônus 2:</strong> Webnário "Um Desafio Chamado Filho"</p></div>
+      <div class="inc-item"><div class="inc-check"><svg viewBox="0 0 10 10" fill="none" stroke="#22913e" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2"/></svg></div><p class="inc-text"><strong>Acesso imediato · Vitalício · 100% online</strong></p></div>
+    </div>
+
+    <a href="https://checkout.perfectpay.com.br/pay/PPU38CQD7D0" class="btn">
+      Quero minha transformação agora →
+    </a>
+    <p class="btn-sub">
+      <span>🔒 Pagamento seguro</span>
+      <span>⚡ Acesso imediato</span>
+      <span>↩ 7 dias de garantia</span>
+    </p>
+
+    <div class="garantia">
+      <div class="garantia-icon">🛡️</div>
+      <div>
+        <p class="garantia-title">7 dias de garantia total</p>
+        <p class="garantia-text">Se em até 7 dias você não sentir nenhuma transformação real, devolvemos 100% do valor. Sem perguntas, sem burocracia. Você não tem nada a perder — só a dor que já carrega.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <p class="sec-label">Dúvidas</p>
+    <h2 class="sec-title" style="margin-bottom:28px">Antes de decidir</h2>
+    <details>
+      <summary>Já comprei o Protocolo da Menopausa. Por que preciso disso também?</summary>
+      <p class="faq-a">O Protocolo trata a raiz hormonal — sono, peso, humor, fogachos. O Desafio da Transformação trata as dores emocionais que bloqueiam a sexualidade. São camadas diferentes do mesmo problema. A maioria das mulheres precisa das duas abordagens para se sentir completa de verdade.</p>
+    </details>
+    <details>
+      <summary>Funciona para mulheres mais velhas, acima dos 50?</summary>
+      <p class="faq-a">Sim. A Dra. Iris trabalha especificamente com mulheres nessa faixa — inclusive dentro do INCA. As dores emocionais que bloqueiam a sexualidade não têm idade. O método foi desenvolvido com esse público em mente.</p>
+    </details>
+    <details>
+      <summary>Quanto tempo por dia preciso dedicar?</summary>
+      <p class="faq-a">30 a 45 minutos por dia. Você acessa quando quiser — no celular, tablet ou computador. Sem horário fixo, sem ao vivo obrigatório.</p>
+    </details>
+    <details>
+      <summary>Como acesso após a compra?</summary>
+      <p class="faq-a">Imediatamente após a confirmação do pagamento você recebe o link no e-mail. Em minutos já começa.</p>
+    </details>
+    <details>
+      <summary>E se eu não gostar?</summary>
+      <p class="faq-a">7 dias de garantia total. Pediu, devolvemos. Sem questionamento.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Termos de Uso</a>
+    <a href="#">Contato</a>
+  </div>
+  <p class="footer-copy">© 2025 Instituto Iris Basilio · Todos os direitos reservados.<br/>Este produto é educativo e não substitui consulta médica ou diagnóstico profissional.</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky" id="sticky">
+  <p class="sticky-text">Desafio da Transformação — R$ 97,00 · Oferta exclusiva</p>
+  <a href="#oferta" class="btn">Quero agora →</a>
+</div>
+
+<script>
+  const sticky = document.getElementById('sticky');
+  window.addEventListener('scroll', () => {
+    sticky.classList.toggle('show', window.scrollY > window.innerHeight * 0.7);
+  }, { passive: true });
+</script>
+</body>
+</html>
