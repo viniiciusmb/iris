@@ -592,11 +592,11 @@ footer a{color:rgba(255,255,255,0.35);text-decoration:none}
       <div class="cta-bonus-txt">
         <strong>Bônus: Guia de Sono Reparador</strong>
         <span>Checklist prático baseado na relação estrogênio e melatonina</span>
-        <span class="cta-bonus-valor">Valor: R$ 57,00 — <strong style="color:#16A34A">grátis hoje</strong></span>
+        <span class="cta-bonus-valor" style="text-decoration:none;color:rgba(255,255,255,0.5)">Valor: R$ 57,00 · Incluído gratuitamente</span>
       </div>
     </div>
 
-    <a href="#" class="btn-comprar">Quero Acessar o Método Agora</a>
+    <a href="https://checkout.perfectpay.com.br/pay/PPU38CQDPR5" id="btn-checkout" class="btn-comprar">Quero Acessar o Método Agora</a>
     <div class="cta-seals">
       <span class="cta-seal">🔒 Pagamento seguro</span>
       <span class="cta-seal">⚡ Acesso imediato</span>
@@ -673,6 +673,26 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 });
 
 
+</script>
+
+<script>
+(function(){
+  function getParams(){
+    return window.location.search;
+  }
+  function setCheckoutLinks(){
+    var base = "https://checkout.perfectpay.com.br/pay/PPU38CQDPR5";
+    var qs = getParams();
+    var url = qs ? base + qs : base;
+    var els = document.querySelectorAll('#btn-checkout');
+    els.forEach(function(el){ el.href = url; });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', setCheckoutLinks);
+  } else {
+    setCheckoutLinks();
+  }
+})();
 </script>
 </body>
 </html>
