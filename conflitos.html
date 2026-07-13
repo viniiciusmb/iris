@@ -356,11 +356,32 @@
   }
   .after-close em{font-style:italic;color:var(--terra)}
 
-  /* ---------- Testimonials ---------- */
-  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  /* ---------- Testimonials (marquee) ---------- */
+  .tst-section{overflow:hidden}
+  .tst-marquee{
+    margin-top:48px;
+    width:100%;
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  }
+  .tst-track{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    width:max-content;
+    animation:tst-scroll 46s linear infinite;
+  }
+  .tst-marquee:hover .tst-track{animation-play-state:paused}
+  @keyframes tst-scroll{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
   .tst-card{
+    flex:0 0 auto;
+    width:360px;
     background:#fff;border:1px solid var(--peach-line);border-radius:18px;padding:28px 26px;
-    display:flex;flex-direction:column;gap:14px;margin:0;
+    display:flex;flex-direction:column;gap:14px;margin:4px 0;
     box-shadow:0 18px 40px -28px rgba(27,42,74,.35)
   }
   .tst-stars{color:var(--amber);font-size:1.05rem;letter-spacing:2px}
@@ -377,6 +398,13 @@
   .tst-meta{display:flex;flex-direction:column;line-height:1.3}
   .tst-meta strong{color:var(--night);font-size:.98rem;font-weight:600}
   .tst-meta small{color:var(--slate);font-size:.82rem}
+  /* card no formato print/imagem (WhatsApp costuma ser vertical) */
+  .tst-card--img{
+    padding:0;overflow:hidden;background:#fff;
+    width:300px;                 /* mais estreito, combina com print de celular */
+    align-self:flex-start;       /* deixa cada card ter a própria altura */
+  }
+  .tst-card--img img{width:100%;height:auto;display:block;border-radius:18px}
   .tst-note{text-align:center;color:var(--slate);font-size:.82rem;margin-top:30px;letter-spacing:.02em}
 
   /* ---------- Reveal animation ---------- */
@@ -389,7 +417,6 @@
     .auth-photo{max-width:340px;margin:0 auto;width:100%}
     .iris-steps{grid-template-columns:repeat(2,1fr)}
     .deliver-grid{grid-template-columns:1fr}
-    .tst-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
   }
   @media(max-width:560px){
     body{font-size:17px}
@@ -401,11 +428,17 @@
     .guarantee{flex-direction:column;text-align:center}
     .trust-row{gap:8px 16px;font-size:.8rem}
     .lead-line,.pivot,.closing h2,.closing .big-q{max-width:100%}
+    .tst-card{width:82vw;max-width:330px}
+    .tst-card--img{width:74vw;max-width:300px}
+    .tst-track{animation-duration:34s}
   }
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none}
     html{scroll-behavior:auto}
     .cta{transition:none}
+    .tst-track{animation:none;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+    .tst-card{scroll-snap-align:center}
+    .tst-marquee{-webkit-mask-image:none;mask-image:none}
   }
 </style>
 </head>
@@ -643,43 +676,49 @@
 </section>
 
 <!-- ============================================= -->
-<!-- SEÇÃO 6C — DEPOIMENTOS                         -->
-<!-- ⚠️ SUBSTITUA pelos depoimentos REAIS antes de -->
-<!-- subir. Não use estes textos de exemplo no ar. -->
+<!-- SEÇÃO 6C — DEPOIMENTOS (carrossel marquee)    -->
+<!-- ⚠️ Exemplos ilustrativos. Para usar os prints -->
+<!-- reais: em cada .tst-card, troque o conteúdo   -->
+<!-- por <img src="depoimentoconlfito1.png" ...>.  -->
+<!-- Mantenha os cards DUPLICADOS (no 2º trilho)    -->
+<!-- para o loop contínuo funcionar.               -->
 <!-- ============================================= -->
-<section class="section-peach">
+<section class="section-peach tst-section">
   <div class="wrap">
     <div class="narrow" style="text-align:center;padding-left:0;padding-right:0">
       <span class="eyebrow reveal">Histórias de quem já viveu isso</span>
       <h2 class="reveal" style="max-width:18ch;margin-left:auto;margin-right:auto">Famílias que estavam se perdendo — e se reencontraram.</h2>
     </div>
-    <div class="tst-grid">
-      <figure class="tst-card reveal">
-        <div class="tst-stars">★★★★★</div>
-        <blockquote>“[DEPOIMENTO REAL AQUI] Em poucos dias a nossa casa já estava diferente. O que mais me marcou foi voltar a jantar com todo mundo conversando, uma coisa que eu achava que não ia acontecer mais.”</blockquote>
-        <figcaption>
-          <span class="tst-av">M</span>
-          <span class="tst-meta"><strong>Nome da aluna</strong><small>Cidade · UF</small></span>
-        </figcaption>
+  </div>
+
+  <div class="tst-marquee reveal" aria-label="Depoimentos de alunas">
+    <div class="tst-track">
+      <!-- ===== TRILHO ORIGINAL ===== -->
+      <figure class="tst-card tst-card--img">
+        <img src="https://irisbazilio.vercel.app/depoimentoconlfito1.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy">
       </figure>
-      <figure class="tst-card reveal">
-        <div class="tst-stars">★★★★★</div>
-        <blockquote>“[DEPOIMENTO REAL AQUI] Eu vivia explodindo com meus filhos e me sentindo a pior mãe do mundo. Aprendi a me segurar na hora certa e hoje a relação com eles é outra. Valeu cada centavo.”</blockquote>
-        <figcaption>
-          <span class="tst-av">A</span>
-          <span class="tst-meta"><strong>Nome da aluna</strong><small>Cidade · UF</small></span>
-        </figcaption>
+      <figure class="tst-card tst-card--img">
+        <img src="https://irisbazilio.vercel.app/depoimentoconflito2.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy">
       </figure>
-      <figure class="tst-card reveal">
-        <div class="tst-stars">★★★★★</div>
-        <blockquote>“[DEPOIMENTO REAL AQUI] Meu casamento estava por um fio, a gente mal se falava. Esse desafio reacendeu algo que eu achava perdido. Sou muito grata à Iris por isso.”</blockquote>
-        <figcaption>
-          <span class="tst-av">R</span>
-          <span class="tst-meta"><strong>Nome da aluna</strong><small>Cidade · UF</small></span>
-        </figcaption>
+      <figure class="tst-card tst-card--img">
+        <img src="https://irisbazilio.vercel.app/depoimentoconflito3.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy">
+      </figure>
+
+      <!-- ===== TRILHO DUPLICADO (para loop contínuo — não remover) ===== -->
+      <figure class="tst-card tst-card--img" aria-hidden="true">
+        <img src="https://irisbazilio.vercel.app/depoimentoconlfito1.png" alt="" loading="lazy">
+      </figure>
+      <figure class="tst-card tst-card--img" aria-hidden="true">
+        <img src="https://irisbazilio.vercel.app/depoimentoconflito2.png" alt="" loading="lazy">
+      </figure>
+      <figure class="tst-card tst-card--img" aria-hidden="true">
+        <img src="https://irisbazilio.vercel.app/depoimentoconflito3.png" alt="" loading="lazy">
       </figure>
     </div>
-    <p class="tst-note reveal">Depoimentos de participantes do Desafio 7 Dias. Resultados variam conforme a dedicação de cada família.</p>
+  </div>
+
+  <div class="wrap">
+    <p class="tst-note reveal">⚠️ Depoimentos de exemplo (ilustrativos) — substituir pelos prints reais das alunas antes de publicar. Resultados variam conforme a dedicação de cada família.</p>
   </div>
 </section>
 
