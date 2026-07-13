@@ -356,32 +356,35 @@
   }
   .after-close em{font-style:italic;color:var(--terra)}
 
-  /* ---------- Testimonials (marquee) ---------- */
+  /* ---------- Testimonials (auto-scroll + drag) ---------- */
   .tst-section{overflow:hidden}
   .tst-marquee{
-    margin-top:48px;
+    margin-top:44px;
     width:100%;
-    overflow:hidden;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-            mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+    overflow-x:auto;
+    overflow-y:hidden;
+    scrollbar-width:none;              /* Firefox */
+    -ms-overflow-style:none;           /* IE/Edge */
+    cursor:grab;
+    -webkit-overflow-scrolling:touch;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
   }
+  .tst-marquee::-webkit-scrollbar{display:none} /* Chrome/Safari */
+  .tst-marquee.is-dragging{cursor:grabbing}
+  .tst-marquee.is-dragging img{pointer-events:none}
   .tst-track{
     display:flex;
     gap:20px;
     align-items:flex-start;
     width:max-content;
-    animation:tst-scroll 46s linear infinite;
-  }
-  .tst-marquee:hover .tst-track{animation-play-state:paused}
-  @keyframes tst-scroll{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
+    padding:4px 24px;               /* respiro nas pontas */
   }
   .tst-card{
     flex:0 0 auto;
     width:360px;
     background:#fff;border:1px solid var(--peach-line);border-radius:18px;padding:28px 26px;
-    display:flex;flex-direction:column;gap:14px;margin:4px 0;
+    display:flex;flex-direction:column;gap:14px;margin:0;
     box-shadow:0 18px 40px -28px rgba(27,42,74,.35)
   }
   .tst-stars{color:var(--amber);font-size:1.05rem;letter-spacing:2px}
@@ -401,11 +404,11 @@
   /* card no formato print/imagem (WhatsApp costuma ser vertical) */
   .tst-card--img{
     padding:0;overflow:hidden;background:#fff;
-    width:300px;                 /* mais estreito, combina com print de celular */
-    align-self:flex-start;       /* deixa cada card ter a própria altura */
+    width:300px;
+    align-self:flex-start;
   }
-  .tst-card--img img{width:100%;height:auto;display:block;border-radius:18px}
-  .tst-note{text-align:center;color:var(--slate);font-size:.82rem;margin-top:30px;letter-spacing:.02em}
+  .tst-card--img img{width:100%;height:auto;display:block;border-radius:18px;user-select:none;-webkit-user-drag:none}
+  .tst-hint{text-align:center;color:var(--slate);font-size:.82rem;margin-top:22px;letter-spacing:.06em}
 
   /* ---------- Reveal animation ---------- */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
@@ -430,15 +433,12 @@
     .lead-line,.pivot,.closing h2,.closing .big-q{max-width:100%}
     .tst-card{width:82vw;max-width:330px}
     .tst-card--img{width:74vw;max-width:300px}
-    .tst-track{animation-duration:34s}
   }
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none}
     html{scroll-behavior:auto}
     .cta{transition:none}
-    .tst-track{animation:none;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
     .tst-card{scroll-snap-align:center}
-    .tst-marquee{-webkit-mask-image:none;mask-image:none}
   }
 </style>
 </head>
@@ -676,12 +676,11 @@
 </section>
 
 <!-- ============================================= -->
-<!-- SEÇÃO 6C — DEPOIMENTOS (carrossel marquee)    -->
-<!-- ⚠️ Exemplos ilustrativos. Para usar os prints -->
-<!-- reais: em cada .tst-card, troque o conteúdo   -->
-<!-- por <img src="depoimentoconlfito1.png" ...>.  -->
-<!-- Mantenha os cards DUPLICADOS (no 2º trilho)    -->
-<!-- para o loop contínuo funcionar.               -->
+<!-- SEÇÃO 6C — DEPOIMENTOS (carrossel auto + drag) -->
+<!-- Rola sozinho; para quando a pessoa toca/segura -->
+<!-- ou arrasta. Loop feito via JS (clona os itens). -->
+<!-- Para trocar/adicionar prints: edite os <img>    -->
+<!-- dentro de #tstTrack. O JS cuida do resto.       -->
 <!-- ============================================= -->
 <section class="section-peach tst-section">
   <div class="wrap">
@@ -691,34 +690,22 @@
     </div>
   </div>
 
-  <div class="tst-marquee reveal" aria-label="Depoimentos de alunas">
-    <div class="tst-track">
-      <!-- ===== TRILHO ORIGINAL ===== -->
+  <div class="tst-marquee reveal" id="tstMarquee" aria-label="Depoimentos de alunas">
+    <div class="tst-track" id="tstTrack">
       <figure class="tst-card tst-card--img">
-        <img src="https://irisbazilio.vercel.app/depoimentoconlfito1.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy">
-      </figure>
-      <figure class="tst-card tst-card--img">
-        <img src="https://irisbazilio.vercel.app/depoimentoconflito2.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy">
+        <img src="https://irisbazilio.vercel.app/depoimentoconlfito1.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy" draggable="false">
       </figure>
       <figure class="tst-card tst-card--img">
-        <img src="https://irisbazilio.vercel.app/depoimentoconflito3.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy">
+        <img src="https://irisbazilio.vercel.app/depoimentoconflito2.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy" draggable="false">
       </figure>
-
-      <!-- ===== TRILHO DUPLICADO (para loop contínuo — não remover) ===== -->
-      <figure class="tst-card tst-card--img" aria-hidden="true">
-        <img src="https://irisbazilio.vercel.app/depoimentoconlfito1.png" alt="" loading="lazy">
-      </figure>
-      <figure class="tst-card tst-card--img" aria-hidden="true">
-        <img src="https://irisbazilio.vercel.app/depoimentoconflito2.png" alt="" loading="lazy">
-      </figure>
-      <figure class="tst-card tst-card--img" aria-hidden="true">
-        <img src="https://irisbazilio.vercel.app/depoimentoconflito3.png" alt="" loading="lazy">
+      <figure class="tst-card tst-card--img">
+        <img src="https://irisbazilio.vercel.app/depoimentoconflito3.png" alt="Depoimento de aluna do Desafio 7 Dias" loading="lazy" draggable="false">
       </figure>
     </div>
   </div>
 
   <div class="wrap">
-    <p class="tst-note reveal">⚠️ Depoimentos de exemplo (ilustrativos) — substituir pelos prints reais das alunas antes de publicar. Resultados variam conforme a dedicação de cada família.</p>
+    <p class="tst-hint reveal">← arraste para ver mais →</p>
   </div>
 </section>
 
@@ -791,6 +778,95 @@
       });
     },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
     els.forEach(function(e){io.observe(e)});
+  })();
+
+  // Testimonials carousel: auto-scroll + pause on hold + free drag
+  (function(){
+    var marquee = document.getElementById('tstMarquee');
+    var track = document.getElementById('tstTrack');
+    if(!marquee || !track) return;
+
+    // Duplicar os cards uma vez para permitir loop contínuo
+    var originals = Array.prototype.slice.call(track.children);
+    originals.forEach(function(node){
+      var clone = node.cloneNode(true);
+      clone.setAttribute('aria-hidden','true');
+      track.appendChild(clone);
+    });
+
+    var half = 0;                 // largura de uma "volta" (metade do track)
+    function measure(){ half = track.scrollWidth / 2; }
+    // medir depois que as imagens carregarem
+    window.addEventListener('load', measure);
+    setTimeout(measure, 400);
+    var imgs = track.querySelectorAll('img');
+    imgs.forEach(function(im){
+      if(!im.complete){ im.addEventListener('load', measure); im.addEventListener('error', measure); }
+    });
+
+    var SPEED = 0.5;              // px por frame (~30px/s) — ritmo suave
+    var paused = false;
+    var resumeTimer = null;
+    var rafId = null;
+
+    function loop(){
+      // pausa se: estado paused (toque/drag) OU mouse fisicamente sobre o carrossel
+      var hovering = false;
+      try { hovering = marquee.matches(':hover'); } catch(e){}
+      if(!paused && !hovering && half > 0){
+        marquee.scrollLeft += SPEED;
+        if(marquee.scrollLeft >= half){ marquee.scrollLeft -= half; }
+        else if(marquee.scrollLeft <= 0){ marquee.scrollLeft += half; }
+      }
+      rafId = requestAnimationFrame(loop);
+    }
+    rafId = requestAnimationFrame(loop);
+
+    function pause(){ paused = true; if(resumeTimer){clearTimeout(resumeTimer); resumeTimer=null;} }
+    function scheduleResume(delay){
+      if(resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function(){ paused = false; }, delay || 1600);
+    }
+
+    // Desktop: pausa enquanto o mouse está sobre os depoimentos
+    marquee.addEventListener('mouseenter', pause);
+    marquee.addEventListener('pointerenter', function(e){ if(e.pointerType==='mouse') pause(); });
+    marquee.addEventListener('mousemove', function(){ if(!dragging){ paused = true; if(resumeTimer){clearTimeout(resumeTimer); resumeTimer=null;} } });
+    marquee.addEventListener('mouseleave', function(){ if(!dragging) scheduleResume(400); });
+    marquee.addEventListener('pointerleave', function(e){ if(e.pointerType==='mouse' && !dragging) scheduleResume(400); });
+
+    // Toque (mobile): pausa ao tocar, retoma um tempo depois de soltar
+    marquee.addEventListener('touchstart', pause, {passive:true});
+    marquee.addEventListener('touchend', function(){ scheduleResume(2000); }, {passive:true});
+    // se a pessoa rolar com o dedo, mantém pausado e reprograma o retorno
+    marquee.addEventListener('scroll', function(){
+      if(paused){ if(resumeTimer){clearTimeout(resumeTimer);} }
+    }, {passive:true});
+    marquee.addEventListener('touchmove', function(){ pause(); }, {passive:true});
+    marquee.addEventListener('touchend', function(){ scheduleResume(2500); }, {passive:true});
+
+    // Arraste com o mouse (desktop) — clicar, segurar e puxar
+    var dragging = false, startX = 0, startScroll = 0, moved = false;
+    marquee.addEventListener('mousedown', function(e){
+      dragging = true; moved = false; pause();
+      startX = e.pageX; startScroll = marquee.scrollLeft;
+      marquee.classList.add('is-dragging');
+    });
+    window.addEventListener('mousemove', function(e){
+      if(!dragging) return;
+      var dx = e.pageX - startX;
+      if(Math.abs(dx) > 3) moved = true;
+      marquee.scrollLeft = startScroll - dx;
+    });
+    window.addEventListener('mouseup', function(){
+      if(!dragging) return;
+      dragging = false;
+      marquee.classList.remove('is-dragging');
+      scheduleResume(1600);
+    });
+    // impedir que o arraste vire clique/seleção
+    marquee.addEventListener('click', function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); } }, true);
+    marquee.addEventListener('dragstart', function(e){ e.preventDefault(); });
   })();
 </script>
 
