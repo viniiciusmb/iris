@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio 7 Dias — Restauração da Família | Iris Bazilio</title>
+<meta name="description" content="Um método baseado em neurociência para desarmar os conflitos da sua casa em 7 dias e resgatar o amor que foi se perdendo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EF;
+    --night:#1B2A4A;
+    --night-soft:#2A3B5E;
+    --amber:#E8A64C;
+    --amber-deep:#D48F32;
+    --terra:#C97B63;
+    --slate:#6B7A99;
+    --peach:#F3E4D3;
+    --peach-line:#EAD7C2;
+    --ink:#20293D;
+
+    --display:'Fraunces',Georgia,serif;
+    --body:'Instrument Sans',system-ui,-apple-system,sans-serif;
+
+    --wrap:1080px;
+    --narrow:720px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:18px;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .narrow{max-width:var(--narrow);margin:0 auto;padding:0 24px}
+
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;letter-spacing:-0.01em;color:var(--night)}
+  h1{font-size:clamp(2rem,5.4vw,3.5rem);font-weight:600}
+  h2{font-size:clamp(1.7rem,4.2vw,2.8rem)}
+  h3{font-size:clamp(1.25rem,2.6vw,1.6rem)}
+  em,.serif-it{font-style:italic}
+
+  .eyebrow{
+    font-family:var(--body);
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--terra);
+    margin-bottom:18px;
+    display:inline-block;
+  }
+
+  /* ---------- Buttons ---------- */
+  .cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+    background:var(--amber);
+    color:var(--night);
+    font-family:var(--body);
+    font-weight:600;
+    font-size:1.12rem;
+    letter-spacing:.005em;
+    padding:20px 40px;
+    border:none;border-radius:100px;
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 10px 30px -8px rgba(232,166,76,.55);
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    text-align:center;
+    line-height:1.2;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 16px 38px -8px rgba(232,166,76,.7);background:var(--amber-deep)}
+  .cta:focus-visible{outline:3px solid var(--night);outline-offset:3px}
+  .cta .sub{font-weight:400;font-size:.82em;opacity:.85}
+  .cta-note{font-size:.82rem;color:var(--slate);margin-top:14px;letter-spacing:.02em}
+
+  /* ---------- Section rhythm ---------- */
+  section{padding:clamp(56px,9vw,104px) 0;position:relative}
+  .section-dark{background:var(--night);color:#EAF0FA}
+  .section-dark h1,.section-dark h2,.section-dark h3{color:#fff}
+  .section-peach{background:var(--peach)}
+
+  /* ---------- VSL slot ---------- */
+  .vsl-slot{
+    padding:clamp(28px,5vw,52px) 0 0;
+    background:linear-gradient(180deg,#fff 0%, var(--cream) 100%);
+  }
+  .vsl-box{
+    max-width:900px;margin:0 auto;
+    aspect-ratio:16/9;
+    background:
+      radial-gradient(120% 120% at 50% 0%, rgba(232,166,76,.10), transparent 60%),
+      #0E1730;
+    border-radius:18px;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(232,166,76,.18);
+    overflow:hidden;
+    position:relative;
+  }
+  /* PLACEHOLDER — remova este bloco .vsl-placeholder ao colar o script da VSL */
+  .vsl-placeholder{color:#5E6E90;font-size:.95rem;text-align:center;padding:24px;letter-spacing:.04em;font-family:var(--body)}
+  .vsl-placeholder strong{color:#9FB0D0;display:block;font-size:1.05rem;margin-bottom:8px;letter-spacing:.02em}
+
+  /* ---------- Hero (below video) ---------- */
+  .hero{
+    text-align:center;
+    padding-top:clamp(40px,6vw,64px);
+    position:relative;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:-10% 0 auto 0;height:70%;
+    background:radial-gradient(60% 100% at 50% 0%, rgba(232,166,76,.16), transparent 70%);
+    pointer-events:none;z-index:0;
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{max-width:16ch;margin:0 auto 22px}
+  .hero .amber-word{color:var(--amber-deep);font-style:italic}
+  .hero .lede{
+    font-size:clamp(1.05rem,2.2vw,1.32rem);
+    color:var(--night-soft);
+    max-width:52ch;margin:0 auto 36px;
+    line-height:1.5;
+  }
+  .trust-row{
+    display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;
+    margin-top:30px;font-size:.86rem;color:var(--slate);font-weight:500
+  }
+  .trust-row span{display:inline-flex;align-items:center;gap:7px}
+  .trust-row .dot{width:5px;height:5px;border-radius:50%;background:var(--terra);flex:none}
+
+  /* ---------- Pain cluster ---------- */
+  .lead-line{
+    font-family:var(--display);
+    font-size:clamp(1.5rem,3.6vw,2.35rem);
+    line-height:1.28;
+    color:var(--night);
+    max-width:22ch;
+  }
+  .lead-line em{color:var(--terra)}
+  .pain-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+    margin-top:48px;
+  }
+  .pain-card{
+    background:var(--cream);
+    border:1px solid var(--peach-line);
+    border-radius:16px;
+    padding:26px 24px;
+  }
+  .section-peach .pain-card{background:#fff}
+  .pain-card .pc-ico{
+    width:42px;height:42px;border-radius:11px;
+    background:var(--peach);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;color:var(--terra)
+  }
+  .pain-card p{font-size:1rem;color:var(--night-soft);line-height:1.5}
+  .pain-card strong{color:var(--night);font-weight:600}
+
+  .pivot{
+    margin-top:52px;
+    font-family:var(--display);
+    font-size:clamp(1.15rem,2.4vw,1.5rem);
+    font-style:italic;
+    color:var(--night);
+    line-height:1.45;
+    max-width:32ch;
+  }
+  .pivot .hl{font-style:normal;font-weight:600;background:linear-gradient(180deg,transparent 62%, rgba(232,166,76,.4) 62%)}
+
+  /* ---------- Mechanism / IRIS ---------- */
+  .mech-intro{max-width:60ch;color:#C6D2E8;font-size:1.1rem;margin-bottom:8px}
+  .iris-steps{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;
+  }
+  .iris-step{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(232,166,76,.22);
+    border-radius:16px;
+    padding:28px 22px;
+    position:relative;
+    overflow:hidden;
+  }
+  .iris-step::after{
+    content:"";position:absolute;top:-30px;right:-30px;width:90px;height:90px;
+    background:radial-gradient(circle, rgba(232,166,76,.16), transparent 70%);
+  }
+  .iris-letter{
+    font-family:var(--display);
+    font-size:2.6rem;font-weight:600;
+    color:var(--amber);
+    line-height:1;margin-bottom:14px;display:block
+  }
+  .iris-step h3{color:#fff;font-size:1.18rem;margin-bottom:9px}
+  .iris-step p{color:#B9C6DE;font-size:.96rem;line-height:1.5}
+
+  /* ---------- Authority ---------- */
+  .auth-grid{
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:center
+  }
+  .auth-photo{
+    aspect-ratio:4/5;
+    border-radius:20px;
+    background:
+      radial-gradient(120% 90% at 30% 20%, rgba(232,166,76,.22), transparent 55%),
+      linear-gradient(160deg, var(--night-soft), var(--night));
+    display:flex;align-items:flex-end;justify-content:center;
+    position:relative;overflow:hidden;
+    border:1px solid var(--peach-line);
+  }
+  .auth-photo .ph-label{
+    color:#8496B8;font-size:.85rem;padding:20px;text-align:center;letter-spacing:.04em
+  }
+  .auth-photo .ring{
+    position:absolute;width:150px;height:150px;border-radius:50%;
+    border:1.5px solid rgba(232,166,76,.35);top:22%;left:50%;transform:translateX(-50%)
+  }
+  .auth-body .eyebrow{color:var(--terra)}
+  .auth-body h2{margin-bottom:20px}
+  .auth-body p{color:var(--night-soft);margin-bottom:18px;font-size:1.04rem}
+  .auth-body .signature{
+    font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--night);margin-top:8px
+  }
+  .cred-list{
+    list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 4px
+  }
+  .cred-list li{
+    font-size:.82rem;font-weight:500;color:var(--night);
+    background:var(--peach);border:1px solid var(--peach-line);
+    padding:7px 14px;border-radius:100px
+  }
+
+  /* ---------- Deliverables ---------- */
+  .deliver-head{text-align:center;max-width:40ch;margin:0 auto 12px}
+  .deliver-sub{text-align:center;color:var(--night-soft);max-width:48ch;margin:0 auto 52px;font-size:1.08rem}
+  .deliver-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .deliver-card{
+    background:#fff;border:1px solid var(--peach-line);border-radius:16px;
+    padding:30px 28px;display:flex;gap:18px;align-items:flex-start
+  }
+  .deliver-card .num{
+    font-family:var(--display);font-size:1.5rem;font-weight:600;color:var(--amber-deep);
+    line-height:1;flex:none;width:38px
+  }
+  .deliver-card h3{font-size:1.22rem;margin-bottom:7px}
+  .deliver-card p{font-size:.98rem;color:var(--night-soft);line-height:1.5}
+
+  /* ---------- Price ---------- */
+  .price-card{
+    max-width:560px;margin:0 auto;
+    background:linear-gradient(180deg,#fff, var(--cream));
+    border:1.5px solid var(--peach-line);
+    border-radius:24px;
+    padding:clamp(32px,5vw,48px);
+    text-align:center;
+    box-shadow:0 30px 70px -30px rgba(27,42,74,.3);
+    position:relative;overflow:hidden;
+  }
+  .price-card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--terra),var(--amber),var(--terra))
+  }
+  .price-badge{
+    display:inline-block;background:var(--night);color:#fff;
+    font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    padding:8px 18px;border-radius:100px;margin-bottom:24px
+  }
+  .price-old{color:var(--slate);text-decoration:line-through;font-size:1.1rem;margin-bottom:4px}
+  .price-now{font-family:var(--display);font-weight:600;line-height:1;color:var(--night);margin-bottom:6px}
+  .price-now .cents{font-size:clamp(3rem,9vw,4.5rem)}
+  .price-now .curr{font-size:1.6rem;vertical-align:top;color:var(--amber-deep);font-weight:600;margin-right:2px}
+  .price-now .dec{font-size:clamp(1.8rem,5vw,2.6rem);vertical-align:top;color:var(--night)}
+  .price-installment{color:var(--night-soft);font-size:1.02rem;margin-bottom:28px}
+  .price-installment strong{color:var(--night)}
+  .price-card .cta{width:100%;font-size:1.18rem;padding:22px 32px}
+  .price-list{list-style:none;text-align:left;max-width:400px;margin:0 auto 30px}
+  .price-list li{
+    display:flex;gap:12px;align-items:flex-start;padding:9px 0;
+    font-size:.98rem;color:var(--night-soft);border-bottom:1px solid var(--peach-line)
+  }
+  .price-list li:last-child{border-bottom:none}
+  .price-list .chk{color:var(--amber-deep);flex:none;margin-top:3px}
+
+  .guarantee{
+    max-width:600px;margin:40px auto 0;
+    background:var(--peach);border:1px solid var(--peach-line);border-radius:18px;
+    padding:28px 30px;display:flex;gap:20px;align-items:center
+  }
+  .guarantee .seal{
+    width:70px;height:70px;border-radius:50%;flex:none;
+    background:radial-gradient(circle at 50% 40%,var(--amber),var(--amber-deep));
+    display:flex;align-items:center;justify-content:center;color:#fff;
+    font-family:var(--display);font-weight:700;font-size:1.5rem;line-height:.9;text-align:center;
+    box-shadow:0 8px 20px -6px rgba(212,143,50,.6)
+  }
+  .guarantee .seal small{display:block;font-size:.5rem;letter-spacing:.1em;font-weight:600}
+  .guarantee p{font-size:.98rem;color:var(--night)}
+  .guarantee strong{color:var(--night);font-weight:600}
+
+  /* ---------- Closing ---------- */
+  .closing{position:relative;overflow:hidden}
+  .closing::before{
+    content:"";position:absolute;inset:auto 0 -20% 0;height:80%;
+    background:radial-gradient(50% 100% at 50% 100%, rgba(232,166,76,.18), transparent 70%);
+    pointer-events:none
+  }
+  .closing .narrow{position:relative;z-index:1;text-align:center}
+  .closing h2{margin-bottom:24px;max-width:20ch;margin-left:auto;margin-right:auto}
+  .closing .big-q{
+    font-family:var(--display);font-style:italic;
+    font-size:clamp(1.3rem,3vw,1.9rem);
+    color:#F0D9B8;line-height:1.4;margin-bottom:14px;max-width:26ch;margin-left:auto;margin-right:auto
+  }
+  .closing p{color:#C6D2E8;font-size:1.08rem;max-width:44ch;margin:0 auto 20px}
+  .closing .cta{margin-top:20px}
+
+  /* ---------- Footer ---------- */
+  footer{background:#141F38;color:#7688AA;text-align:center;padding:44px 24px;font-size:.82rem;line-height:1.7}
+  footer .fname{font-family:var(--display);color:#C6D2E8;font-size:1.1rem;font-style:italic;margin-bottom:10px}
+  footer a{color:#98A8C8;text-decoration:underline}
+  .disclaimer{max-width:640px;margin:14px auto 0;font-size:.74rem;color:#5E6E90}
+
+  /* ---------- After / transformação ---------- */
+  .after{background:linear-gradient(180deg, var(--cream) 0%, #FDF9F3 100%);position:relative;overflow:hidden}
+  .after::before{
+    content:"";position:absolute;inset:auto 0 -30% 0;height:70%;
+    background:radial-gradient(50% 100% at 50% 100%, rgba(232,166,76,.12), transparent 70%);pointer-events:none
+  }
+  .after .wrap{position:relative;z-index:1}
+  .after-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px;max-width:860px;margin-left:auto;margin-right:auto
+  }
+  .after-item{
+    display:flex;gap:16px;align-items:flex-start;
+    background:#fff;border:1px solid var(--peach-line);border-radius:16px;padding:24px 24px
+  }
+  .after-ico{
+    width:48px;height:48px;border-radius:12px;flex:none;
+    background:radial-gradient(circle at 40% 35%, rgba(232,166,76,.25), rgba(201,123,99,.15));
+    display:flex;align-items:center;justify-content:center;color:var(--amber-deep)
+  }
+  .after-item p{font-size:1.02rem;color:var(--night-soft);line-height:1.5}
+  .after-item strong{color:var(--night);font-weight:600}
+  .after-close{
+    text-align:center;max-width:40ch;margin:48px auto 0;
+    font-family:var(--display);font-size:clamp(1.15rem,2.5vw,1.55rem);line-height:1.4;color:var(--night)
+  }
+  .after-close em{font-style:italic;color:var(--terra)}
+
+  /* ---------- Testimonials ---------- */
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  .tst-card{
+    background:#fff;border:1px solid var(--peach-line);border-radius:18px;padding:28px 26px;
+    display:flex;flex-direction:column;gap:14px;margin:0;
+    box-shadow:0 18px 40px -28px rgba(27,42,74,.35)
+  }
+  .tst-stars{color:var(--amber);font-size:1.05rem;letter-spacing:2px}
+  .tst-card blockquote{
+    font-size:1.02rem;color:var(--night);line-height:1.55;font-style:italic;margin:0;flex:1
+  }
+  .tst-card figcaption{display:flex;align-items:center;gap:12px;margin-top:4px}
+  .tst-av{
+    width:44px;height:44px;border-radius:50%;flex:none;
+    background:linear-gradient(150deg, var(--terra), var(--amber-deep));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-weight:600;font-size:1.15rem
+  }
+  .tst-meta{display:flex;flex-direction:column;line-height:1.3}
+  .tst-meta strong{color:var(--night);font-size:.98rem;font-weight:600}
+  .tst-meta small{color:var(--slate);font-size:.82rem}
+  .tst-note{text-align:center;color:var(--slate);font-size:.82rem;margin-top:30px;letter-spacing:.02em}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:820px){
+    .auth-grid{grid-template-columns:1fr;gap:32px}
+    .auth-photo{max-width:340px;margin:0 auto;width:100%}
+    .iris-steps{grid-template-columns:repeat(2,1fr)}
+    .deliver-grid{grid-template-columns:1fr}
+    .tst-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  }
+  @media(max-width:560px){
+    body{font-size:17px}
+    .pain-grid{grid-template-columns:1fr}
+    .iris-steps{grid-template-columns:1fr}
+    .after-grid{grid-template-columns:1fr}
+    .cta{width:100%;padding:19px 24px}
+    .hero .cta{width:auto;min-width:80%}
+    .guarantee{flex-direction:column;text-align:center}
+    .trust-row{gap:8px 16px;font-size:.8rem}
+    .lead-line,.pivot,.closing h2,.closing .big-q{max-width:100%}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+    .cta{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 1 — VÍDEO DA VSL (vTurb)                 -->
+<!-- Cole o script/embed da sua VSL no lugar do    -->
+<!-- comentário abaixo, dentro de .vsl-box.        -->
+<!-- Remova a div .vsl-placeholder depois.         -->
+<!-- ============================================= -->
+<section class="vsl-slot">
+  <div class="wrap">
+    <div class="vsl-box">
+
+      <!-- ================================================= -->
+      <!-- COLE O SCRIPT DA VSL (vTurb) AQUI                  -->
+      <!-- ================================================= -->
+
+      <!-- (placeholder visual — apagar ao inserir a VSL) -->
+      <div class="vsl-placeholder">
+        <strong>▶ Área do vídeo (VSL)</strong>
+        Cole aqui o script de embed do vTurb
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 2 — HERO / HEADLINE + CTA               -->
+<!-- ============================================= -->
+<section class="hero" style="padding-bottom:clamp(48px,7vw,80px)">
+  <div class="wrap">
+    <span class="eyebrow reveal">Desafio 7 Dias · Restauração da Família</span>
+    <h1 class="reveal">Sua casa virou um lugar de <span class="amber-word">silêncio e briga</span>. Ainda dá tempo de trazer o amor de volta.</h1>
+    <p class="lede reveal">Um método baseado em neurociência para desarmar os conflitos da sua família em 7 dias — e reacender a conexão que foi se perdendo, um dia de cada vez.</p>
+    <a href="#oferta" class="cta reveal">Quero restaurar minha família <span class="sub">— começar agora</span></a>
+    <div class="trust-row reveal">
+      <span><span class="dot"></span>Enfermeira · Mestre e Doutora</span>
+      <span><span class="dot"></span>Especialista em Neurociências (PUC)</span>
+      <span><span class="dot"></span>25 anos de profissão</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 3 — IDENTIFICAÇÃO COM A DOR             -->
+<!-- ============================================= -->
+<section class="section-peach">
+  <div class="narrow">
+    <span class="eyebrow reveal">Se você reconhece isso…</span>
+    <p class="lead-line reveal">Tem gente demais na sua casa — e, ao mesmo tempo, <em>ninguém se fala de verdade.</em></p>
+  </div>
+  <div class="wrap">
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pc-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+        </div>
+        <p><strong>O jantar virou telas.</strong> Todo mundo à mesa, mas cada um no celular. A conversa sumiu, e quando alguém fala, sai atravessado.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pc-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h5"/></svg>
+        </div>
+        <p><strong>A mesma briga, sempre igual.</strong> Vocês discutem pela louça, pela conta, por nada — e no fundo é sempre o mesmo desgaste se repetindo.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pc-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><path d="M4 4l16 16" opacity=".5"/></svg>
+        </div>
+        <p><strong>Os filhos se afastaram.</strong> Trancados no quarto, respondendo mal, distantes. Você sente que está perdendo o contato com eles.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pc-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A5.5 5.5 0 0 0 12 5 5.5 5.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7Z"/><path d="M2 2l20 20" opacity=".55"/></svg>
+        </div>
+        <p><strong>O casamento esfriou.</strong> Dormem de costas, viraram dois estranhos dividindo um teto. E existe um medo que você não conta pra ninguém.</p>
+      </div>
+    </div>
+    <p class="pivot reveal">E você ainda carrega a culpa caladinha — achando que, se fosse uma mãe melhor, uma esposa melhor, nada disso estaria acontecendo. <span class="hl">A verdade é que a culpa não é sua.</span></p>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 4 — A VIRADA + MECANISMO (IRIS)         -->
+<!-- ============================================= -->
+<section class="section-dark">
+  <div class="wrap">
+    <div class="narrow" style="padding-left:0;padding-right:0">
+      <span class="eyebrow reveal" style="color:var(--amber)">Por que nada que você tentou funcionou</span>
+      <h2 class="reveal" style="margin-bottom:22px">No meio da briga, não é você falando. É a sua casa presa no modo defesa.</h2>
+      <p class="mech-intro reveal">Quando o clima pesa por muito tempo, todo mundo passa a viver de guarda erguida — esperando a próxima farpa. E ninguém consegue amar, ouvir ou ceder de guarda erguida. Por isso conversar não resolve, engolir não resolve, ter paciência não resolve: tratam o galho, nunca a raiz.</p>
+      <p class="mech-intro reveal" style="color:#EAF0FA;font-weight:500;margin-top:18px">A boa notícia? O que trava a sua casa é reversível. E existe uma ordem certa pra desarmar isso — foi o que eu transformei no <strong style="color:var(--amber)">Método IRIS</strong>.</p>
+    </div>
+
+    <div class="iris-steps">
+      <div class="iris-step reveal">
+        <span class="iris-letter">I</span>
+        <h3>Identificar</h3>
+        <p>Enxergar o gatilho real por trás das brigas — que quase nunca é o assunto que parece. Sem isso, você apaga o incêndio errado.</p>
+      </div>
+      <div class="iris-step reveal">
+        <span class="iris-letter">R</span>
+        <h3>Reprogramar</h3>
+        <p>Quebrar o padrão que se repete há anos: estopim, explosão, arrependimento, silêncio. Interromper a reação antes dela virar briga.</p>
+      </div>
+      <div class="iris-step reveal">
+        <span class="iris-letter">I</span>
+        <h3>Instalar</h3>
+        <p>Reativar a conexão com gestos pequenos que reaproximam de verdade — sem sermão, sem DR, sem depender que o outro mude primeiro.</p>
+      </div>
+      <div class="iris-step reveal">
+        <span class="iris-letter">S</span>
+        <h3>Sustentar</h3>
+        <p>Fixar a mudança pra casa não esfriar de novo. Toda transformação em família tem efeito sanfona — aqui é onde ela se mantém de pé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 5 — AUTORIDADE (IRIS)                   -->
+<!-- ============================================= -->
+<section>
+  <div class="wrap">
+    <div class="auth-grid">
+      <div class="auth-photo reveal">
+        <div class="ring"></div>
+        <!-- Troque este bloco por <img src="foto-iris.jpg" alt="Iris Bazilio"> -->
+        <span class="ph-label">Foto da Iris Bazilio<br>(substituir)</span>
+      </div>
+      <div class="auth-body">
+        <span class="eyebrow reveal">Quem vai te guiar</span>
+        <h2 class="reveal">Eu não falo de família só na teoria. Eu falo de dentro da dor real.</h2>
+        <p class="reveal">Minha filha tinha 8 anos quando me disse que “nunca ia querer casar, pra não ficar triste e infeliz pelos cantos”. Ela já tinha desistido de acreditar em família — porque a única que ela conhecia era a nossa, vivendo em conflito. Aquilo me quebrou. E me fez estudar, com a minha cabeça de cientista, por que eu não conseguia mudar o clima da minha própria casa.</p>
+        <p class="reveal">Quando eu descobri, eu apliquei em mim. E reconstruí, do zero, uma família em paz. Hoje eu ajudo outras mães e pais a fazerem o mesmo — com método, com ciência, e com o coração de quem já esteve exatamente onde você está.</p>
+        <ul class="cred-list reveal">
+          <li>Enfermeira há 25 anos</li>
+          <li>Mestre e Doutora</li>
+          <li>Neurociências · PUC</li>
+          <li>Instituto Iris Bazilio</li>
+        </ul>
+        <p class="signature reveal">Iris Bazilio</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 6 — O QUE É O DESAFIO 7 DIAS            -->
+<!-- ============================================= -->
+<section class="section-peach">
+  <div class="wrap">
+    <div class="narrow" style="text-align:center;padding-left:0;padding-right:0">
+      <span class="eyebrow reveal">O que é o Desafio 7 Dias</span>
+      <h2 class="deliver-head reveal">É simples: um passo por dia, durante 7 dias, pra sua casa voltar a ser um lugar bom de viver.</h2>
+      <p class="deliver-sub reveal">Você não precisa de terapia de anos, nem de fazer a família toda “colaborar”. Todo dia você abre uma tarefa curta, aplica na sua própria casa naquele mesmo dia, e vai sentindo o clima mudar. É prático, é rápido, e cabe na correria de quem tem filho, casa e trabalho.</p>
+    </div>
+    <div class="deliver-grid">
+      <div class="deliver-card reveal">
+        <span class="num">01</span>
+        <div>
+          <h3>7 dias, 7 passos guiados</h3>
+          <p>Cada dia você recebe uma missão simples e objetiva — sem enrolação, sem teoria complicada. Você abre, entende em minutos e aplica na hora. Do primeiro dia, que revela o que realmente causa as brigas, ao último, que devolve a paz e a proximidade.</p>
+        </div>
+      </div>
+      <div class="deliver-card reveal">
+        <span class="num">02</span>
+        <div>
+          <h3>O Método IRIS, passo a passo</h3>
+          <p>É o coração do desafio, dividido nos 7 dias: você aprende a <strong>identificar</strong> o que dispara os conflitos, <strong>reprogramar</strong> a briga que se repete, <strong>instalar</strong> de volta o carinho e a conversa, e <strong>sustentar</strong> tudo isso pra casa não esfriar de novo.</p>
+        </div>
+      </div>
+      <div class="deliver-card reveal">
+        <span class="num">03</span>
+        <div>
+          <h3>A ferramenta pra parar de explodir</h3>
+          <p>Uma técnica simples pra você se acalmar no momento exato em que ia estourar — e responder diferente. Só isso já muda o clima da casa inteira, porque a mudança começa em você, sem depender de mais ninguém.</p>
+        </div>
+      </div>
+      <div class="deliver-card reveal">
+        <span class="num">04</span>
+        <div>
+          <h3>Comunidade de apoio pra sempre</h3>
+          <p>Você entra num grupo com outras mães e pais vivendo exatamente o que você vive — e eu estou lá dentro, junto, pra te ajudar. O acesso é vitalício: sempre que surgir um desafio novo, você tem pra onde voltar e com quem contar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="narrow" style="text-align:center;padding-left:0;padding-right:0;margin-top:44px">
+      <p class="reveal" style="font-family:var(--display);font-style:italic;font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--night);line-height:1.45">Em resumo: você recebe um caminho pronto e simples de seguir — e nunca fica sozinha nele.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 6B — COMO VAI SER SUA FAMÍLIA DEPOIS    -->
+<!-- ============================================= -->
+<section class="after">
+  <div class="wrap">
+    <div class="narrow" style="text-align:center;padding-left:0;padding-right:0">
+      <span class="eyebrow reveal">Imagine daqui a algumas semanas</span>
+      <h2 class="reveal" style="max-width:20ch;margin-left:auto;margin-right:auto">Como vai ser a sua casa quando o amor voltar a ter espaço.</h2>
+    </div>
+    <div class="after-grid">
+      <div class="after-item reveal">
+        <div class="after-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-2a4 4 0 0 1 4-4h1"/><path d="M20 20v-2a4 4 0 0 0-4-4h-1"/><circle cx="12" cy="8" r="4"/><path d="M8.5 20c1-1.5 2-2 3.5-2s2.5.5 3.5 2"/></svg>
+        </div>
+        <p>O jantar volta a ter <strong>conversa e risada</strong> — os celulares saem da mesa e vocês voltam a se olhar de verdade.</p>
+      </div>
+      <div class="after-item reveal">
+        <div class="after-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C5.5 15.5 3 12.5 3 9a4.5 4.5 0 0 1 9-1 4.5 4.5 0 0 1 9 1c0 3.5-2.5 6.5-9 12Z"/></svg>
+        </div>
+        <p>Seu filho <strong>volta a te procurar</strong> — sai do quarto, senta do seu lado, divide as coisas dele com você de novo.</p>
+      </div>
+      <div class="after-item reveal">
+        <div class="after-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10s1.5-2 5-2 5 2 5 2"/><path d="M12 3v3"/><path d="M5 14c1.5 3 4 5 7 5s5.5-2 7-5"/></svg>
+        </div>
+        <p>Você e seu parceiro <strong>voltam a se reaproximar</strong> — o carinho reaparece, e a cama deixa de ser um lugar de dois estranhos.</p>
+      </div>
+      <div class="after-item reveal">
+        <div class="after-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M19 12h2M12 3v2M12 19v2"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <p>Você <strong>chega em casa e sente alívio</strong>, não aperto no peito. A sua casa volta a ser o seu lugar de descanso.</p>
+      </div>
+    </div>
+    <p class="after-close reveal">Não é uma família perfeita, sem nenhum problema. É uma família <em>em paz</em> — onde os problemas se resolvem com respeito, e onde o amor, que sempre esteve aí embaixo, volta a aparecer.</p>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 6C — DEPOIMENTOS                         -->
+<!-- ⚠️ SUBSTITUA pelos depoimentos REAIS antes de -->
+<!-- subir. Não use estes textos de exemplo no ar. -->
+<!-- ============================================= -->
+<section class="section-peach">
+  <div class="wrap">
+    <div class="narrow" style="text-align:center;padding-left:0;padding-right:0">
+      <span class="eyebrow reveal">Histórias de quem já viveu isso</span>
+      <h2 class="reveal" style="max-width:18ch;margin-left:auto;margin-right:auto">Famílias que estavam se perdendo — e se reencontraram.</h2>
+    </div>
+    <div class="tst-grid">
+      <figure class="tst-card reveal">
+        <div class="tst-stars">★★★★★</div>
+        <blockquote>“[DEPOIMENTO REAL AQUI] Em poucos dias a nossa casa já estava diferente. O que mais me marcou foi voltar a jantar com todo mundo conversando, uma coisa que eu achava que não ia acontecer mais.”</blockquote>
+        <figcaption>
+          <span class="tst-av">M</span>
+          <span class="tst-meta"><strong>Nome da aluna</strong><small>Cidade · UF</small></span>
+        </figcaption>
+      </figure>
+      <figure class="tst-card reveal">
+        <div class="tst-stars">★★★★★</div>
+        <blockquote>“[DEPOIMENTO REAL AQUI] Eu vivia explodindo com meus filhos e me sentindo a pior mãe do mundo. Aprendi a me segurar na hora certa e hoje a relação com eles é outra. Valeu cada centavo.”</blockquote>
+        <figcaption>
+          <span class="tst-av">A</span>
+          <span class="tst-meta"><strong>Nome da aluna</strong><small>Cidade · UF</small></span>
+        </figcaption>
+      </figure>
+      <figure class="tst-card reveal">
+        <div class="tst-stars">★★★★★</div>
+        <blockquote>“[DEPOIMENTO REAL AQUI] Meu casamento estava por um fio, a gente mal se falava. Esse desafio reacendeu algo que eu achava perdido. Sou muito grata à Iris por isso.”</blockquote>
+        <figcaption>
+          <span class="tst-av">R</span>
+          <span class="tst-meta"><strong>Nome da aluna</strong><small>Cidade · UF</small></span>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="tst-note reveal">Depoimentos de participantes do Desafio 7 Dias. Resultados variam conforme a dedicação de cada família.</p>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 7 — PREÇO + GARANTIA                    -->
+<!-- ============================================= -->
+<section id="oferta">
+  <div class="wrap">
+    <div class="narrow" style="text-align:center;padding-left:0;padding-right:0;margin-bottom:44px">
+      <span class="eyebrow reveal">Comece hoje</span>
+      <h2 class="reveal">Menos do que um lanche de fim de semana. Pra mudar o que mais importa na sua vida.</h2>
+    </div>
+
+    <div class="price-card reveal">
+      <span class="price-badge">Acesso completo</span>
+
+      <ul class="price-list">
+        <li><span class="chk">✓</span> Desafio 7 Dias completo, com o Método IRIS passo a passo</li>
+        <li><span class="chk">✓</span> Técnicas de regulação emocional para o dia a dia</li>
+        <li><span class="chk">✓</span> Comunidade de apoio vitalícia, com a presença da Iris</li>
+        <li><span class="chk">✓</span> Aplicação prática desde o primeiro dia</li>
+      </ul>
+
+      <div class="price-old">de R$ 197</div>
+      <div class="price-now"><span class="curr">R$</span><span class="cents">37</span><span class="dec">,90</span></div>
+      <div class="price-installment">à vista ou em <strong>até 3x</strong> · pagamento único, acesso imediato</div>
+
+      <a href="#" class="cta">Quero restaurar minha família agora</a>
+      <p class="cta-note">Compra 100% segura · Acesso liberado na hora</p>
+    </div>
+
+    <div class="guarantee reveal">
+      <div class="seal">7<small>DIAS</small></div>
+      <p><strong>Risco zero, garantia total de 7 dias.</strong> Entra, aplica e sente a mudança. Se por qualquer motivo achar que não é pra você, devolvo cada centavo — sem pergunta, sem burocracia. O risco é todo meu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SEÇÃO 8 — FECHO EMOCIONAL + CTA FINAL         -->
+<!-- ============================================= -->
+<section class="section-dark closing">
+  <div class="narrow">
+    <span class="eyebrow reveal" style="color:var(--amber)">Antes de você fechar esta página</span>
+    <h2 class="reveal">O tempo com a sua família é a única coisa que não volta.</h2>
+    <p class="big-q reveal">Ninguém, no fim da vida, pede mais um dia pra trabalhar ou pra brigar. Todos pedem a mesma coisa: mais um dia com quem amam.</p>
+    <p class="reveal">Você ainda tem hoje. E amanhã. E, se Deus quiser, uma vida inteira pela frente. Ainda dá tempo de fazer o resto dessa vida ser leve e feliz ao lado das pessoas que mais importam pra você — em vez de longe delas, dentro da sua própria casa.</p>
+    <p class="reveal" style="color:#F0D9B8">Não deixe pra resolver depois o que você pode começar a mudar agora.</p>
+    <a href="#oferta" class="cta reveal">Começar meu Desafio 7 Dias</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">Instituto Iris Bazilio</div>
+  <div>Restauração da Família · Método IRIS</div>
+  <p class="disclaimer">Este conteúdo tem caráter educativo e de desenvolvimento pessoal, baseado em princípios de neurociência aplicada às relações familiares. Não substitui acompanhamento psicológico, psiquiátrico ou médico individual. Resultados variam de pessoa para pessoa e dependem da aplicação de cada participante.</p>
+</footer>
+
+<script>
+  // Reveal on scroll
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in')});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+      });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+
+</body>
+</html>
